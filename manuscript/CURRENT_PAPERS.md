@@ -10,6 +10,8 @@ Updated: 2026-10-03
 
 - English master: [`PAIR_AB_MASTER_v4_EN.md`](PAIR_AB_MASTER_v4_EN.md)
 - 中文主稿: [`PAIR_AB_MASTER_v4_ZH.md`](PAIR_AB_MASTER_v4_ZH.md)
+- English conversation exemplars: [`PAIR_AB_CONVERSATION_EXAMPLES_v1_EN.md`](PAIR_AB_CONVERSATION_EXAMPLES_v1_EN.md)
+- 中文对话样例: [`PAIR_AB_CONVERSATION_EXAMPLES_v1_ZH.md`](PAIR_AB_CONVERSATION_EXAMPLES_v1_ZH.md)
 
 Scientific role:
 - Aim 1: confirmatory matched psychosis-related vs matched-control consumer-product audit.
@@ -22,12 +24,16 @@ Reviewer-2 corrections already incorporated into the design state:
 - brand-leakage audit is required;
 - Aim 2 remains exploratory because six scenario families are the clinical replication units.
 
+**Dialogue-exemplar rule:** the final paper must include representative prompt-response examples. Selection is frozen in advance: one Aim-1 matched pair, one Aim-2 minimal pair, and—if a failure example is shown—one predefined frequency/medoid-selected failure category rather than a narratively convenient cherry-picked case.
+
 ## Paper 2 — C
 
 **Canonical working version:** PAIR-C Master v2
 
 - English master: [`PAIR_C_MASTER_v2_EN.md`](PAIR_C_MASTER_v2_EN.md)
 - 中文主稿: [`PAIR_C_MASTER_v2_ZH.md`](PAIR_C_MASTER_v2_ZH.md)
+- English conversation exemplars: [`PAIR_C_CONVERSATION_EXAMPLES_v1_EN.md`](PAIR_C_CONVERSATION_EXAMPLES_v1_EN.md)
+- 中文对话样例: [`PAIR_C_CONVERSATION_EXAMPLES_v1_ZH.md`](PAIR_C_CONVERSATION_EXAMPLES_v1_ZH.md)
 
 Scientific role:
 - development and pilot evaluation of psychosis-specific conversational response-policy calibration under one-clinical-cue-at-a-time minimal contrasts;
@@ -43,9 +49,19 @@ Key corrections:
 - evidence/plausibility is clinically relevant and is not nuisance invariance;
 - Nuisance Invariance is not estimated in the current 64-item pilot.
 
+**Dialogue-exemplar rule:** the main text must contain at least one minimal clinical-contrast dialogue pair tied to the principal empirical finding; additional examples move to the Supplement. Selection must not depend on dramatic wording.
+
+## GitHub Pages meeting interface
+
+GitHub Pages is the intended meeting/presentation surface, not merely a repository landing page.
+- `docs/index.html` is the meeting discussion handbook.
+- `docs/papers.html` embeds both manuscript masters inside the Page with A+B / C and Chinese / English switching.
+- The corresponding conversation-exemplar module is automatically appended beneath each embedded paper.
+- `docs/dashboard.html` remains a technical project index rather than the meeting-facing page.
+
 ## Bilingual publication rule
 
-Public README, current manuscript masters, HTML dashboards and GitHub Pages are maintained in synchronized English and Simplified Chinese versions. See [`../BILINGUAL_POLICY.md`](../BILINGUAL_POLICY.md).
+Public README, current manuscript masters, conversation-exemplar modules, HTML meeting pages and GitHub Pages are maintained in synchronized English and Simplified Chinese versions. See [`../BILINGUAL_POLICY.md`](../BILINGUAL_POLICY.md).
 
 ## Empirical-result boundary
 
