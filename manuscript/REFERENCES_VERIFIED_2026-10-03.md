@@ -1,0 +1,18 @@
+# Verified reference library (2026-10-03)
+
+1. Miller TJ, McGlashan TH, Rosen JL, Cadenhead K, Cannon T, Ventura J, et al. Prodromal assessment with the Structured Interview for Prodromal Syndromes and the Scale of Prodromal Symptoms: predictive validity, interrater reliability, and training to reliability. Schizophr Bull. 2003;29(4):703–715. doi:10.1093/oxfordjournals.schbul.a007040.
+2. Shen E, Hamati F, Donohue MR, Girgis RR, Veenstra-VanderWeele J, Jutla A. Evaluation of Large Language Model Chatbot Responses to Psychotic Prompts. JAMA Psychiatry. 2026;83(6):655–657. doi:10.1001/jamapsychiatry.2026.0249.
+3. The CHART Collaborative. Reporting guideline for chatbot health advice studies: the Chatbot Assessment Reporting Tool (CHART) statement. BMJ Medicine. 2025;4:e001632.
+4. The CHART Collaborative. Reporting guidelines for chatbot health advice studies: explanation and elaboration for the Chatbot Assessment Reporting Tool (CHART). BMJ. 2025;390:e083305. doi:10.1136/bmj-2024-083305.
+5. Fouda AE, Hassan AA, Hanafy RJ, Fouda ME. PsychiatryBench: a multi-task benchmark for LLMs in psychiatry. npj Digital Medicine. 2026. doi:10.1038/s41746-026-02582-w.
+6. Jin H, Chen S, Dilixiati D, Jiang Y, Zhu KQ, et al. PsyEval: a comprehensive large language model evaluation benchmark for mental health. npj Mental Health Research. 2026. doi:10.1038/s44184-026-00227-0.
+7. Badawi A, Rahimi E, Laskar MTR, Grach S, Bertrand L, Danok L, et al. When Can We Trust LLMs in Mental Health? Large-Scale Benchmarks for Reliable LLM Evaluation. In: Proceedings of the 19th Conference of the European Chapter of the Association for Computational Linguistics. 2026:3873–3896. doi:10.18653/v1/2026.eacl-long.180.
+8. Weilnhammer V, Hou KYC, Luettgau L, Summerfield C, Dolan R, Nour MM. A clinically validated framework for auditing AI chatbot behavior in mental health interactions. Nature Medicine. 2026. doi:10.1038/s41591-026-04577-2.
+9. Au Yeung J, Dalmasso J, Foschini L, Dobson RJB, Kraljevic Z. The Psychogenic Machine: Simulating AI Psychosis, Delusion Reinforcement and Harm Enablement in Large Language Models. arXiv:2509.10970. 2025.
+10. Kirgis P, Hawriluk B, Feng S, Bilimer A, Paech S, Tufekci Z. LLM Spirals of Delusion: A Benchmarking Audit Study of AI Chatbot Interfaces. arXiv:2604.06188. 2026.
+11. Presacan O, Grama A, Irimină L, Nik A, Ojha J, Thambawita V, et al. Ask Before You Diagnose: Safe-Psych, a Sequential Evaluation Benchmark for LLMs in Psychiatry. arXiv:2607.13036. 2026.
+12. Vowels LM, Vowels MJ, Sharma S, Jha A, Choudhury R, El Sarraj W, et al. K-Bench: a clinically calibrated benchmark for evaluating large language models in high-risk mental health conversations. arXiv:2609.15855. 2026.
+13. Zhang Z, Huang L, Wu G, Nakov P, Ji H, Naseem U. Health-ORSC-Bench: A Benchmark for Measuring Over-Refusal and Safety Completion in Health Context. Findings of ACL 2026. 2026:23525–23547. doi:10.18653/v1/2026.findings-acl.1177.
+14. Shen Y, Fong S, Jiang Y, Wang Z, Tang F, Xu Q, et al. PsychEthicsBench: Evaluating Large Language Models Against Australian Mental Health Ethics. Findings of ACL 2026. 2026:39571–39589. doi:10.18653/v1/2026.findings-acl.1971.
+15. Zhu T, Tashevski A, Taquet M, Azis M, Jani T, Broome MR, et al. Evaluating large language models for assessment of psychosis risk. npj Digital Medicine. 2026. doi:10.1038/s41746-026-02928-4.
+16. Xiao W, Zhang H, Chen X, Cai J, Luo X, Deng J. Large language models for late-life depression: a blinded benchmark of clinical safety, geriatric appropriateness, and triage. Front Psychiatry. 2026;17:1956736. doi:10.3389/fpsyt.2026.1956736.
