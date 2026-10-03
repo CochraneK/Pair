@@ -1,154 +1,150 @@
 project: psychosis-ai-response-evaluation
 canonical_date: '2026-10-03'
-route_selected: null
-parallel_route_preparation: complete
-operational_recommendation: 'A=guaranteed paper with AI-generated 160-prompt bank; B=active enhancement with frozen 36-prompt pilot; C=separate benchmark track clinician-review-ready'
+assumption_mode: true
+assumption_mode_note: >-
+  User authorized proceeding as if clinical item/rubric review is acceptable for workflow execution.
+  This is not evidence of real clinician sign-off and cannot be represented as such in research claims.
+operational_recommendation: 'A=main paper; B=nested enhancement; C=separate fixed-API benchmark track'
+
 human_gates:
-  HG1_route_selection: pending_formal_team_record
-  HG2_clinical_item_approval: pending
-  HG3_rubric_approval: pending
-  HG4_ethics_determination: pending
-  HG5_preregistration_freeze: pending
-  HG_C1_plan_c_clinician_review: pending_issue_5
-  HG0_repository_sync: complete_public_collaboration_safe
+  HG1_route_selection: operationally_resolved_A_plus_B_main_C_separate_candidate
+  HG2_clinical_item_approval: assumed_pass_execution_only_real_evidence_missing
+  HG3_rubric_approval: assumed_pass_execution_only_real_evidence_missing
+  HG4_ethics_determination: pending_real_institutional_action
+  HG5_preregistration: draft_complete_submission_pending
+  HG_C1_plan_c_clinician_review: assumed_pass_execution_only_real_evidence_missing
+
+execution_counts:
+  plan_a: 960
+  plan_b: 324
+  plan_c: 576
+  total: 1860
+
 tasks:
 - id: T001
-  name: Update literature landscape
+  name: Update literature and novelty landscape
   status: completed_2026-10-03
   auto: true
-  acceptance: Peer-reviewed/preprint status verified; closest overlaps added; novelty memo dated.
-- id: T001B
-  name: Narrow Plan C novelty after counterfactual mental-health literature
-  status: completed_2026-10-03
-  auto: true
-  acceptance: SIM-VAIL/Safe-Psych/ClinDet/K-Bench overlap documented; generic novelty claims removed.
-- id: T002
-  name: Formal team route decision for manuscript path A vs B
-  status: blocked_human
-  auto: false
-  acceptance: Team decision recorded in DECISIONS_LOG.md; C requires explicit new-project decision.
+
 - id: T002A
-  name: Advance Plan A to protocol-ready state
+  name: Plan A protocol/case-bank freeze
   status: completed_2026-10-03
   auto: true
-  acceptance: Protocol, candidate SAP, results shell and freeze checklist committed.
-- id: T002A1
-  name: Generate full Plan A case bank inside PAIR
-  status: completed_2026-10-03
-  auto: true
-  acceptance: 80 matched pairs / 160 prompts across P1-P5 generated, QA-passed and frozen as A-v0.1-provisional.
+  acceptance: 80 pairs / 160 prompts, P1-P5 balanced, QA-passed, A-v0.1-provisional frozen.
+
 - id: T002B
-  name: Advance Plan B to pilot-ready state
+  name: Plan B pilot freeze
   status: completed_2026-10-03
   auto: true
-  acceptance: Protocol, SAP, results shell and pilot design committed.
-- id: T002B1
-  name: Instantiate and freeze Plan B pilot
-  status: completed_2026-10-03
-  auto: true
-  acceptance: 6 families × 3 axes × 2 variants = 36 prompts, 18 minimal pairs, frozen as B-v0.1-provisional.
-- id: T002B2
-  name: Add engineering-only Plan B policy intervals
-  status: completed_2026-10-03
-  auto: true
-  acceptance: Dry-run [L,U] intervals created and explicitly labelled non-clinical / non-inferential.
+  acceptance: 36 prompts / 18 minimal pairs, engineering intervals available, B-v0.1-provisional frozen.
+
 - id: T002C
-  name: Advance Plan C to benchmark/pilot-ready state
+  name: Plan C pilot architecture and novelty narrowing
   status: completed_2026-10-03
   auto: true
-  acceptance: Core benchmark architecture, metrics and 64-prompt pilot architecture committed.
-- id: T002D
-  name: Implement and smoke-test boundary metrics
-  status: completed_2026-10-03
-  auto: true
-  acceptance: CCA/URS/ORS/CDC/RS/NI code runs on synthetic fixture and dry-run is recorded.
+  acceptance: 64 prompts, 3 fixed API configs, metrics and runner prepared.
+
 - id: T003
-  name: Clinician-review Plan A AI-generated case bank
-  status: blocked_human
+  name: Clinical item/rubric review
+  status: assumed_pass_for_execution_only
   auto: false
-  acceptance: All 80 pairs reviewed for domain fit, realism, severity, control appropriateness and unintended clinical cues; revisions versioned as A-v0.2.
+  acceptance: Real clinician evidence still required before manuscript claims of validation/ground truth.
+
 - id: T004
-  name: Freeze clinician-approved Plan A prompts
-  status: blocked_by_T003
-  auto: false
-  acceptance: Clinician-approved case bank and sign-off record committed without overwriting A-v0.1.
-- id: T004B
-  name: Clinician-review Plan B pilot prompts and replace engineering [L,U]
-  status: blocked_human
-  auto: false
-  acceptance: 18 minimal pairs validated; independent clinician [L,U] intervals replace engineering defaults; revisions versioned as B-v0.2.
-- id: T004C
-  name: Targeted Plan C novelty/scoping review
+  name: Freeze deterministic collection schedules
   status: completed_2026-10-03
   auto: true
-  acceptance: Search covers psychosis, counterfactuals, calibration, over/under-response and adjacent psychiatric benchmarks; unsupported first claims removed.
-- id: T004C1
-  name: Draft Plan C clinical ontology and 64-item pilot
-  status: completed_2026-10-03
-  auto: true
-  acceptance: 8 families × 4 axes × 2 levels created; structural validator passes with zero errors/warnings.
-- id: T004C2
-  name: Clinician review Plan C ontology and 64-item pilot
-  status: blocked_human_issue_5
-  auto: false
-  acceptance: Manipulation success, realism, confounds and raw reviewer-specific [L,U] completed; v0.2 revised set produced.
-- id: T004C3
-  name: Freeze and run fixed-model Plan C pilot
-  status: blocked_by_T004C2_ethics_and_team_scope
-  auto: false
-  acceptance: Frozen prompt set/configs/runs completed; real results clearly separated from synthetic dry-runs.
+  acceptance: Seeds/counts frozen; generator committed; A=960, B=324, C=576.
+
 - id: T005
-  name: Create APP environment manifests
-  status: template_completed_product_freeze_pending
+  name: Freeze consumer-product and API configuration candidates
+  status: completed_2026-10-03
   auto: true
-  acceptance: One settings snapshot per product; account state documented.
+  acceptance: A/B product set plus C dated/fixed model IDs committed; collection-time metadata still required.
+
 - id: T006
-  name: Pilot APP collection for Plan A/B
-  status: blocked_by_T004_T004B_T005
-  auto: false
-  acceptance: Pilot completed without quota/fallback contamination; capture QA passes.
+  name: Prepare rater manual and blinded rating-pack tooling
+  status: completed_2026-10-03
+  auto: true
+  acceptance: Unified rater manual and blinded pack generator committed.
+
 - id: T007
-  name: Finalize rubric and rater manual
-  status: blocked_human
-  auto: false
-  acceptance: Pilot ratings completed; disagreements discussed; rubric frozen.
+  name: Prepare preregistration draft
+  status: completed_draft_submission_pending
+  auto: true
+  acceptance: Plan A+B preregistration text exists; actual timestamped submission remains human/institutional action.
+
 - id: T008
-  name: Preregister protocol/SAP
-  status: blocked_human
+  name: Obtain ethics determination
+  status: pending_real_institutional_action
   auto: false
-  acceptance: Frozen version timestamped before main collection.
+  acceptance: Dated written determination stored and accurately cited.
+
 - id: T009
-  name: Run main APP collection
-  status: blocked_by_T008
+  name: Submit preregistration
+  status: pending_after_ethics_or_local_policy_check
   auto: false
-  acceptance: All planned runs present; raw immutable archive + screenshots + manifest.
+  acceptance: Frozen protocol/SAP timestamped before main outcome inspection.
+
 - id: T010
-  name: Generate blinded rating pack
-  status: blocked_by_T009
-  auto: true
-  acceptance: Brand leakage audit passed; raw source preserved separately.
-- id: T011
-  name: Clinical rating
-  status: blocked_human
+  name: A/B APP technical smoke pilot
+  status: ready_to_execute_external
   auto: false
-  acceptance: All required raters complete; reliability calculated.
+  acceptance: 5-10 prompts across selected products; no unresolved account/UI/quota/fallback/capture problems.
+
+- id: T011
+  name: C fixed-API technical smoke pilot
+  status: ready_but_requires_api_credentials
+  auto: false
+  acceptance: 5-10 scheduled calls across all 3 configs; exact request metadata preserved; no provider incompatibility.
+
 - id: T012
-  name: Run frozen statistics
-  status: blocked_by_T011
-  auto: true
-  acceptance: Script reproduces all tables/figures from raw+ratings.
+  name: Run full Plan A consumer-product collection
+  status: blocked_by_real_smoke_pilot_and_preregistration
+  auto: false
+  acceptance: 960 scheduled outputs or fully documented deviations; raw immutable archive + manifest.
+
 - id: T013
-  name: CHART reporting audit
-  status: blocked_by_T012
-  auto: true
-  acceptance: All relevant CHART items mapped to manuscript/supplement.
+  name: Run full Plan B product pilot
+  status: blocked_by_real_smoke_pilot_and_preregistration
+  auto: false
+  acceptance: 324 scheduled outputs or fully documented deviations.
+
 - id: T014
-  name: Independent Reviewer-2 audit
-  status: blocked_by_T012
-  auto: true
-  acceptance: Novelty, leakage, post-hoc changes, model claims and citation status reviewed.
+  name: Run full Plan C fixed-API pilot
+  status: blocked_by_api_keys_smoke_pilot_and_separate_scope_freeze
+  auto: false
+  acceptance: 576 scheduled outputs or fully documented deviations.
+
 - id: T015
-  name: Pre-submission literature refresh
-  status: blocked_by_T014
+  name: Generate blinded rating packs
+  status: tooling_complete_waiting_for_real_outputs
   auto: true
-  acceptance: Search updated through submission date; novelty claims revised if needed.
+  acceptance: Brand leakage audit passed; private blind mapping preserved separately.
+
+- id: T016
+  name: Obtain real clinician ratings
+  status: waiting_for_real_outputs
+  auto: false
+  acceptance: Raw independent ratings, disagreement, adjudication and reliability retained.
+
+- id: T017
+  name: Run frozen statistics
+  status: analysis_tooling_ready_waiting_for_real_ratings
+  auto: true
+  acceptance: Scripts reproduce tables/figures from frozen real data and save environment/session metadata.
+
+- id: T018
+  name: CHART reporting audit
+  status: precheck_complete_final_audit_waiting_for_results
+  auto: true
+
+- id: T019
+  name: Independent Reviewer-2 audit
+  status: waiting_for_results
+  auto: true
+
+- id: T020
+  name: Pre-submission literature refresh
+  status: waiting_for_manuscript
+  auto: true
