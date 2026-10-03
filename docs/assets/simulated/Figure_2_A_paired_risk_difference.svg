@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="330" viewBox="0 0 760 330">
+<style>text{font-family:Arial,"Microsoft YaHei",sans-serif;fill:#2b2824} .muted{fill:#6e675f} .axis{stroke:#8d857b;stroke-width:1} .mark{fill:#6c3030} .line{stroke:#6c3030;stroke-width:2}</style>
+<rect width="100%" height="100%" fill="#fbf8f1"/><text x="24" y="28" font-size="16" font-weight="700">Simulated Plan A: paired risk difference</text>
+<line class="axis" x1="150" y1="290" x2="710" y2="290"/>
+<text x="18" y="79" font-size="12">qwen_app</text><line class="line" x1="150" y1="75" x2="371.2" y2="75"/><circle class="mark" cx="371.2" cy="75" r="5"/>
+<text x="18" y="122" font-size="12">deepseek_app</text><line class="line" x1="150" y1="118" x2="430" y2="118"/><circle class="mark" cx="430" cy="118" r="5"/>
+<text x="18" y="165" font-size="12">yuanbao_app</text><line class="line" x1="150" y1="161" x2="512.1" y2="161"/><circle class="mark" cx="512.1" cy="161" r="5"/>
+<text x="18" y="208" font-size="12">kimi_app</text><line class="line" x1="150" y1="204" x2="557.9" y2="204"/><circle class="mark" cx="557.9" cy="204" r="5"/>
+<text x="18" y="251" font-size="12">doubao_app</text><line class="line" x1="150" y1="247" x2="616.7" y2="247"/><circle class="mark" cx="616.7" cy="247" r="5"/>
+<text class="muted" x="270" y="326" font-size="11">Psychotic − matched control inappropriate-response risk (percentage points)</text></svg>
