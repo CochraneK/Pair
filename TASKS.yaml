@@ -5,7 +5,7 @@ ethics_assumption_mode: true
 assumption_mode_note: >-
   User authorized proceeding as if clinical item/rubric review and ethics gate are acceptable for workflow execution.
   This is not evidence of real clinician sign-off or institutional ethics approval and cannot be represented as such in research claims.
-operational_recommendation: 'A=main paper; B=nested enhancement; C=separate fixed-API benchmark track'
+operational_recommendation: 'Paper1=A primary + B exploratory; Paper2=C separate response-policy calibration benchmark pilot'
 
 human_gates:
   HG1_route_selection: operationally_resolved_A_plus_B_main_C_separate_candidate
@@ -14,6 +14,7 @@ human_gates:
   HG4_ethics_determination: assumed_pass_execution_only_real_institutional_evidence_missing
   HG5_preregistration: internal_freeze_complete_formal_registry_submission_pending
   HG_C1_plan_c_clinician_review: assumed_pass_execution_only_real_evidence_missing
+  HG_C2_revised_pair_direction_schema: completed_2026-10-03_real_annotations_missing
 
 execution_counts:
   plan_a: 960
@@ -49,13 +50,25 @@ tasks:
   name: Plan C pilot architecture and novelty narrowing
   status: completed_with_design_correction_2026-10-03
   auto: true
-  acceptance: 64 prompts, 3 fixed API configs, metrics and runner prepared; evidence/plausibility corrected as clinically relevant axis, NI separated into dedicated nuisance module.
+  acceptance: 64 prompts, 3 fixed API configs, runner prepared; evidence/plausibility is clinically relevant, NI is excluded from the core pilot, exact threshold-location claims removed.
 
 - id: T003
   name: Clinical item/rubric review
   status: assumed_pass_for_execution_only
   auto: false
   acceptance: Real clinician evidence still required before manuscript claims of validation/ground truth.
+
+- id: T003B
+  name: Freeze revised B clinician direction schema
+  status: completed_schema_only_real_annotations_missing_2026-10-03
+  auto: true
+  acceptance: `routes/B/CLINICIAN_REVIEW_SCHEMA_v0.2.csv` includes raw [L,U], direct target_direction and clinically_relevant_change.
+
+- id: T003C
+  name: Freeze revised C clinician direction schema
+  status: completed_schema_only_real_annotations_missing_2026-10-03
+  auto: true
+  acceptance: `routes/C/CLINICIAN_REVIEW_SCHEMA.csv` includes raw [L,U], direct target_direction and clinically_relevant_change; metric code field names aligned.
 
 - id: T004
   name: Freeze deterministic collection schedules
@@ -101,9 +114,9 @@ tasks:
 
 - id: T011
   name: C fixed-API technical smoke pilot
-  status: synthetic_pipeline_passed_real_api_smoke_requires_credentials
+  status: synthetic_pipeline_passed_real_api_smoke_requires_credentials_and_real_clinician_schema_values
   auto: false
-  acceptance: Frozen real smoke subset C=48 across 3 configs; provider authentication/request compatibility must pass.
+  acceptance: Frozen real smoke subset C=48 across 3 configs; revised clinician schema must be populated/frozen and provider authentication/request compatibility must pass before scientific interpretation.
 
 - id: T012
   name: Run full Plan A consumer-product collection
@@ -113,15 +126,15 @@ tasks:
 
 - id: T013
   name: Run full Plan B product pilot
-  status: blocked_by_real_app_smoke_only_under_assumption_mode
+  status: blocked_by_real_app_smoke_and_real_B_clinician_annotations
   auto: false
-  acceptance: 324 scheduled outputs or fully documented deviations.
+  acceptance: 324 scheduled outputs or fully documented deviations; B target_direction/clinically_relevant_change frozen before output interpretation.
 
 - id: T014
   name: Run full Plan C fixed-API pilot
-  status: blocked_by_api_credentials_and_real_api_smoke
+  status: blocked_by_api_credentials_real_api_smoke_and_real_C_clinician_annotations
   auto: false
-  acceptance: 576 scheduled outputs or fully documented deviations.
+  acceptance: 576 scheduled outputs or fully documented deviations; raw [L,U], target_direction and clinically_relevant_change frozen before model-output interpretation.
 
 - id: T015
   name: Generate blinded rating packs
@@ -148,10 +161,12 @@ tasks:
 
 - id: T019
   name: Independent Reviewer-2 audit
-  status: waiting_for_results
+  status: predata_stress_test_completed_2026-10-03_final_rerun_waiting_for_real_results
   auto: true
+  acceptance: Pre-data reports committed in `manuscript/REVIEWER2_AB_v1.md` and `manuscript/REVIEWER2_C_v1.md`; rerun after empirical Results/Discussion are populated.
 
 - id: T020
   name: Pre-submission literature refresh
-  status: waiting_for_manuscript
+  status: partial_refresh_completed_2026-10-03_final_refresh_waiting_for_submission
   auto: true
+  acceptance: Novelty and reference status rerun immediately before submission, especially PAIR-C response-policy/calibration overlaps.
