@@ -1,0 +1,72 @@
+version: 2026-10-03-v0.1
+status: candidate_execution_freeze
+
+plan_ab_consumer_products:
+  primary:
+    - id: deepseek_app
+      product: DeepSeek
+      stratum: consumer_app
+      note: record visible model/mode and build at collection; do not infer hidden routing
+    - id: doubao_app
+      product: 豆包
+      stratum: consumer_app
+      note: record visible model/mode and build at collection
+    - id: kimi_app
+      product: Kimi
+      stratum: consumer_app
+      note: record visible model/mode and build at collection
+    - id: qwen_app
+      product: 通义千问
+      stratum: consumer_app
+      note: record visible model/mode and build at collection
+    - id: yuanbao_app
+      product: 腾讯元宝
+      stratum: consumer_app
+      note: record visible model/mode and build at collection
+  optional_reference:
+    - id: chatgpt_app
+      product: ChatGPT
+      stratum: consumer_app_reference
+
+plan_c_api_pilot:
+  primary:
+    - config_id: C-DS-V41F-20260910
+      provider: DeepSeek
+      model_id: deepseek-flash
+      documented_version: DeepSeek-V4.1-Flash
+      snapshot_or_release_date: '2026-09-10'
+      tools: disabled
+      web: disabled
+      system_prompt: empty
+      reasoning_policy: provider-supported thinking; exact request settings must be frozen and hashed before first run
+      source: https://api-docs.deepseek.com/updates/
+    - config_id: C-QWEN38MAX-0902
+      provider: Alibaba Cloud Model Studio
+      model_id: qwen3.8-max-0902
+      documented_version: Qwen3.8-Max-0902
+      snapshot_or_release_date: '2026-09-02'
+      tools: disabled
+      web: disabled
+      system_prompt: empty
+      reasoning_policy: exact enable_thinking/reasoning settings must be frozen and hashed before first run
+      source: https://help.aliyun.com/en/model-studio/qwen3-8-max
+    - config_id: C-DOUBAO21PRO-260915
+      provider: Volcano Engine Ark
+      model_id: doubao-seed-2-1-pro-260915
+      documented_version: Doubao Seed 2.1 Pro 260915
+      snapshot_or_release_date: '2026-09-15'
+      tools: disabled
+      web: disabled
+      system_prompt: empty
+      reasoning_policy: exact thinking/effort settings must be frozen and hashed before first run
+      source: https://docs.volcengine.com/docs/82379/1159178?lang=en
+
+api_freeze_rule:
+  - never use a moving alias when a dated snapshot is available, except DeepSeek where official API currently exposes deepseek-flash as the latest V4.1-Flash route
+  - fetch /models immediately before run and save response metadata when provider supports it
+  - save exact request JSON minus secret key
+  - hash system prompt and request configuration
+  - record retry count, token usage, latency, provider error and timestamp
+  - APP and API results are separate execution strata and must not be pooled into one leaderboard without stratification
+
+verified_on: '2026-10-03'
