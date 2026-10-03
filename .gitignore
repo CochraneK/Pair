@@ -1,0 +1,34 @@
+# Secrets / local config
+.env
+.env.*
+*.key
+*.pem
+secrets/
+
+# Raw / potentially sensitive research data
+data/raw/
+raw/
+screenshots/
+captures/
+private/
+
+# Large local artifacts
+*.zip
+*.7z
+*.tar.gz
+
+# Third-party source documents pending redistribution permission
+reference/*.docx
+reference/*.pdf
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
