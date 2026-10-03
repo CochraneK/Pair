@@ -1,8 +1,10 @@
 project: psychosis-ai-response-evaluation
 canonical_date: '2026-10-03'
 route_selected: null
+parallel_route_preparation: complete
+operational_recommendation: 'A=guaranteed paper; B=active enhancement; C=prepared separate benchmark track'
 human_gates:
-  HG1_route_selection: pending
+  HG1_route_selection: pending_formal_team_record
   HG2_clinical_item_approval: pending
   HG3_rubric_approval: pending
   HG4_ethics_determination: pending
@@ -14,29 +16,64 @@ tasks:
   status: completed_2026-10-03
   auto: true
   acceptance: Peer-reviewed/preprint status verified; closest overlaps added; novelty memo dated.
+- id: T001B
+  name: Narrow Plan C novelty after counterfactual mental-health literature
+  status: completed_2026-10-03
+  auto: true
+  acceptance: SIM-VAIL overlap documented; generic counterfactual novelty claim removed.
 - id: T002
-  name: Choose Plan A/B/C
+  name: Formal team route decision for manuscript path A vs B
   status: blocked_human
   auto: false
-  acceptance: Team decision recorded in DECISIONS_LOG.md.
-- id: T003
-  name: Audit original matched pairs
-  status: partial_3_examples_only_full_prompt_set_missing
+  acceptance: Team decision recorded in DECISIONS_LOG.md; C requires explicit new-project decision.
+- id: T002A
+  name: Advance Plan A to protocol-ready state
+  status: completed_2026-10-03
   auto: true
-  acceptance: Every pair checked for non-psychosis risk/action differences.
+  acceptance: Protocol, candidate SAP, results shell and freeze checklist committed.
+- id: T002B
+  name: Advance Plan B to pilot-ready state
+  status: completed_2026-10-03
+  auto: true
+  acceptance: 36-prompt pilot design, clinician interval ground truth, SAP and results shell committed.
+- id: T002C
+  name: Advance Plan C to benchmark/pilot-ready state
+  status: completed_2026-10-03
+  auto: true
+  acceptance: Core benchmark architecture, metrics, nuisance-invariance set and 64-prompt pilot design committed.
+- id: T002D
+  name: Implement and smoke-test boundary metrics
+  status: completed_2026-10-03
+  auto: true
+  acceptance: CCA/URS/ORS/CDC/RS/NI code runs on synthetic fixture and dry-run is recorded.
+- id: T003
+  name: Import and audit original matched pairs
+  status: blocked_data_full_prompt_set_missing
+  auto: true
+  acceptance: Every one of the 80 psychotic/control pairs checked for non-psychosis risk/action differences.
 - id: T004
-  name: Revise and clinician-review prompts
-  status: blocked_human
+  name: Revise and clinician-review Plan A prompts
+  status: blocked_by_T003_and_human
   auto: false
   acceptance: All prompts frozen; clinician sign-off recorded.
+- id: T004B
+  name: Instantiate and clinician-review Plan B pilot prompts
+  status: blocked_human_base_families
+  auto: false
+  acceptance: 6 families × 3 axes × 2 variants validated; [L,U] intervals assigned.
+- id: T004C
+  name: Formal Plan C novelty/scoping review
+  status: prepared_but_not_started_as_primary_track
+  auto: true
+  acceptance: Search specifically covers psychosis + cue manipulation + thresholds + over/under-response; novelty language frozen without unsupported 'first' claims.
 - id: T005
   name: Create APP environment manifests
-  status: template_completed_route_selection_still_pending
+  status: template_completed_product_freeze_pending
   auto: true
   acceptance: One settings snapshot per product; account state documented.
 - id: T006
-  name: Pilot APP collection
-  status: blocked_by_T004_T005
+  name: Pilot APP collection for Plan A/B
+  status: blocked_by_T004_T004B_T005
   auto: false
   acceptance: Pilot completed without quota/fallback contamination; capture QA passes.
 - id: T007
