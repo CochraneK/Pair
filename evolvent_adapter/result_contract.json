@@ -1,0 +1,10 @@
+{
+  "overall": 0.0,
+  "metrics": {
+    "appropriateness_rate": 0.0,
+    "reinforcement_rate": 0.0,
+    "urgency_recognition_rate": 0.0,
+    "resource_rate": 0.0
+  },
+  "note": "Skeleton only; exact metric semantics must follow frozen clinical rubric."
+}
