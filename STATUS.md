@@ -4,7 +4,7 @@
 
 ## Overall
 
-🟢 **Design/engineering preparation is complete, the end-to-end synthetic smoke pipeline has passed, and both manuscript tracks have completed a pre-data Reviewer #2 stress test. Under user-authorized Assumption Mode, A/B/C are at real-data execution readiness.**
+🟢 **Design/engineering preparation is complete, the end-to-end synthetic smoke pipeline has passed, both manuscript tracks have completed a pre-data Reviewer #2 stress test, and the public publication layer is now bilingual. Under user-authorized Assumption Mode, A/B/C are at real-data execution readiness.**
 
 Operational framing:
 
@@ -27,10 +27,27 @@ See `ASSUMPTION_MODE_2026-10-03.md` for the evidence boundary: workflow may proc
 - [x] Plan A CLMM analysis script
 - [x] **end-to-end synthetic smoke run passed: 184 outputs**
 
+## Bilingual public layer
+
+- [x] English README: `README.md`
+- [x] Chinese README: `README.zh-CN.md`
+- [x] bilingual maintenance rule: `BILINGUAL_POLICY.md`
+- [x] A+B Master v4 available in English + Simplified Chinese
+- [x] PAIR-C Master v2 available in English + Simplified Chinese
+- [x] bilingual manuscript-state page
+- [x] bilingual `docs/index.html` dashboard with English/中文 switch
+- [x] PAIR-C clinician review HTML rebuilt as a valid bilingual tool
+- [x] clinician review HTML aligned with revised C schema: `[L,U]`, `target_direction`, `clinically_relevant_change`
+- [x] GitHub Pages enabled (`has_pages: true` at latest repository check)
+
+Public-facing README, current paper masters, HTML and Pages must remain synchronized across languages.
+
 ## Manuscript / submission layer
 
 ### Paper 1 — A+B
 - [x] submission-structured master created
+- [x] canonical English master: `manuscript/PAIR_AB_MASTER_v4_EN.md`
+- [x] canonical Chinese master: `manuscript/PAIR_AB_MASTER_v4_ZH.md`
 - [x] literature and clinical-theory narrative rebuilt
 - [x] CHART map + real-data swap map created
 - [x] pre-data Reviewer #2 stress test completed: `manuscript/REVIEWER2_AB_v1.md`
@@ -42,6 +59,8 @@ See `ASSUMPTION_MODE_2026-10-03.md` for the evidence boundary: workflow may proc
 
 ### Paper 2 — C
 - [x] full companion manuscript master created
+- [x] canonical English master: `manuscript/PAIR_C_MASTER_v2_EN.md`
+- [x] canonical Chinese master: `manuscript/PAIR_C_MASTER_v2_ZH.md`
 - [x] pre-data Reviewer #2 stress test completed: `manuscript/REVIEWER2_C_v1.md`
 - [x] reviewer corrections frozen as **PAIR-C v2**: `manuscript/PAIR_C_V2_STATUS.md`
 - [x] framing narrowed from exact “boundary location” to **response-policy calibration under minimal clinical contrasts**
@@ -86,7 +105,8 @@ Formatted local DOCX masters have been rendered and visually QA-checked page-by-
 - [x] evidence/plausibility corrected as a clinically relevant axis, not nuisance
 - [x] positive and negative target directions supported
 - [x] NI explicitly `NA` until a true nuisance module is frozen
-- [ ] **before real C outputs:** clinician schema must include raw `[L,U]`, pair-level `target_direction`, `clinically_relevant_change`, manipulation success, second-axis change, major confound, and contraindicated behaviors
+- [x] revised clinician schema includes raw `[L,U]`, pair-level `target_direction`, `clinically_relevant_change`, manipulation success, second-axis change, major confound, and contraindicated behaviors
+- [x] bilingual clinician-review HTML exports fields aligned with the revised schema
 
 ## Execution volume
 
@@ -113,6 +133,6 @@ There are currently **no real model-performance results**. Synthetic/mock and re
 Run the **real technical smoke pilot** with frozen prompts/settings, then full collection if authentication/UI/quota/API checks pass:
 - A: 100 real APP smoke outputs
 - B: 36 real APP smoke outputs
-- C: 48 real API smoke outputs (only after the revised C clinician schema is frozen)
+- C: 48 real API smoke outputs after real clinician review fields are completed/frozen
 
 After real data: frozen statistics → empirical tables/figures → populate Results/Discussion → **Reviewer #2 rerun** → final CHART/Nature Portfolio reporting audit → submission.
