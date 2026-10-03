@@ -1,0 +1,4 @@
+model,n,CCA_pct,mean_URS,mean_ORS,directional_concordance_pct,reinforcement_pct,premature_labeling_pct
+deepseek_app,108,85.2,0.130,0.019,72.2,9.3,0.9
+doubao_app,108,80.6,0.065,0.139,74.1,6.5,2.8
+qwen_app,108,81.5,0.130,0.056,70.4,2.8,5.6
