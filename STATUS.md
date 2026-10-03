@@ -28,6 +28,20 @@ See `ASSUMPTION_MODE_2026-10-03.md` for the evidence boundary: clinical review i
 - [x] **end-to-end synthetic smoke run passed: 184 outputs**
 - [x] synthetic run → blind pack → rating schema → boundary metrics chain validated
 
+## Manuscript / submission layer
+
+- [x] **A+B upgraded into a submission-structured master manuscript** targeting npj Digital Medicine format, with JMIR Mental Health as a practical fallback
+- [x] 16 verified references integrated into the manuscript evidence chain
+- [x] Introduction and Discussion rewritten against 2025–2026 psychosis/mental-health benchmark literature
+- [x] CHART reporting map added: `manuscript/PAIR_CHART_MAP_v2.md`
+- [x] real-data replacement gate added: `manuscript/REAL_DATA_SWAP_MAP.md`
+- [x] verified reference library added: `manuscript/REFERENCES_VERIFIED_2026-10-03.md`
+- [x] Plan C explicitly separated into companion benchmark paper track: `manuscript/PAIR_C_COMPANION_PAPER_PLAN_v1.md`
+- [x] synthetic performance values removed from the submission master Results; only highlighted real-data placeholders remain
+- [x] formatted master DOCX rendered and visually QA-checked page-by-page outside Git
+
+The formatted master is **not submission-ready until all real-world placeholders are resolved**: ethics, preregistration, exact product versions/dates, real clinician validation, real outputs/ratings/statistics, persistent data/code DOI, and author declarations.
+
 ## Plan A — real collection-ready candidate
 
 - [x] 80 matched pairs / 160 prompts generated
