@@ -6,96 +6,179 @@
 <title>PAIR — Psychosis AI Response</title>
 <style>
 :root{--bg:#f6f8fb;--card:#fff;--ink:#17202a;--muted:#667085;--line:#e5e7eb;--accent:#234b66;--soft:#eef5f8;--warn:#fff7df;--ok:#ecfdf3}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.6}.wrap{max-width:1080px;margin:0 auto;padding:42px 20px 80px}.top{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;margin-bottom:30px}.eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}.title{font-size:42px;line-height:1.1;margin:8px 0 10px}.sub{max-width:760px;color:var(--muted);font-size:17px}.pill{display:inline-block;border:1px solid #bed4df;background:var(--soft);color:var(--accent);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:24px 0}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 2px 10px rgba(16,24,40,.04)}.card h2{margin:0 0 8px;font-size:22px}.card h3{margin:18px 0 6px;font-size:15px;color:var(--accent)}.meta{font-size:13px;color:var(--muted);margin-bottom:14px}.section{margin-top:30px}.section h2{font-size:24px;margin:0 0 12px}.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.btn{display:inline-block;text-decoration:none;border:1px solid var(--line);border-radius:10px;padding:9px 12px;background:white;color:var(--accent);font-weight:700;font-size:13px}.btn:hover{background:#f8fafc}.warning{background:var(--warn);border:1px solid #f2d58b;border-radius:14px;padding:16px 18px}.good{background:var(--ok);border:1px solid #a7e2bd;border-radius:14px;padding:16px 18px}.small{font-size:13px;color:var(--muted)}ul{padding-left:19px;margin:8px 0}li{margin:5px 0}.footer{margin-top:42px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}@media(max-width:760px){.grid{grid-template-columns:1fr}.top{display:block}.title{font-size:34px}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC","Microsoft YaHei",Arial,sans-serif;line-height:1.65}.wrap{max-width:1080px;margin:0 auto;padding:36px 20px 80px}.topbar{display:flex;justify-content:flex-end;margin-bottom:12px}.lang{display:flex;gap:6px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:4px}.lang button{border:0;background:transparent;padding:7px 12px;border-radius:8px;font-weight:700;color:var(--muted);cursor:pointer}.lang button.active{background:var(--soft);color:var(--accent)}.top{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;margin-bottom:30px}.eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}.title{font-size:42px;line-height:1.1;margin:8px 0 10px}.sub{max-width:790px;color:var(--muted);font-size:17px}.pill{display:inline-block;border:1px solid #bed4df;background:var(--soft);color:var(--accent);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:24px 0}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 2px 10px rgba(16,24,40,.04)}.card h2{margin:0 0 8px;font-size:22px}.card h3{margin:18px 0 6px;font-size:15px;color:var(--accent)}.meta{font-size:13px;color:var(--muted);margin-bottom:14px}.section{margin-top:30px}.section h2{font-size:24px;margin:0 0 12px}.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.btn{display:inline-block;text-decoration:none;border:1px solid var(--line);border-radius:10px;padding:9px 12px;background:white;color:var(--accent);font-weight:700;font-size:13px}.btn:hover{background:#f8fafc}.warning{background:var(--warn);border:1px solid #f2d58b;border-radius:14px;padding:16px 18px}.good{background:var(--ok);border:1px solid #a7e2bd;border-radius:14px;padding:16px 18px}.small{font-size:13px;color:var(--muted)}ul{padding-left:19px;margin:8px 0}li{margin:5px 0}.footer{margin-top:42px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}[data-lang="zh"]{display:none}@media(max-width:760px){.grid{grid-template-columns:1fr}.top{display:block}.title{font-size:34px}.pill{margin-top:12px}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="top">
-    <div>
-      <div class="eyebrow">PAIR · Psychosis AI Response</div>
-      <h1 class="title">Research dashboard</h1>
-      <div class="sub">A public, version-controlled workspace for evaluating how AI chat products and fixed model configurations respond to psychosis-related content. The project separates consumer-product auditing from response-policy calibration research.</div>
+  <div class="topbar">
+    <div class="lang" aria-label="Language switch">
+      <button id="btn-en" class="active" onclick="setLang('en')">English</button>
+      <button id="btn-zh" onclick="setLang('zh')">中文</button>
     </div>
-    <span class="pill">Research preparation · 2026-10-03</span>
   </div>
 
-  <div class="warning"><strong>Evidence boundary.</strong> There are currently <strong>no real model-performance results</strong> reported here. Synthetic, mock, and dry-run outputs are engineering/rehearsal artifacts only and must not be interpreted as empirical rankings or claims about any product.</div>
-
-  <div class="grid">
-    <article class="card">
-      <div class="meta">Paper 1 · A+B · current working state: Master v4</div>
-      <h2>Consumer-product psychosis audit</h2>
-      <p><strong>Aim 1:</strong> matched psychosis-related versus matched nonpsychotic prompts across Chinese-language consumer AI products.</p>
-      <p><strong>Aim 2:</strong> prespecified exploratory minimal-contrast substudy testing whether response policy shifts proportionately when conviction, insight/alternative-explanation acceptance, or immediate behavioral risk changes.</p>
-      <h3>Key safeguards</h3>
-      <ul>
-        <li>Claims are product/configuration/date specific, not base-model essentialist.</li>
-        <li>P5 disorganized-communication sensitivity analysis is prespecified.</li>
-        <li>Raters are blinded to product identity; prompt condition is not falsely claimed to be blinded.</li>
-        <li>Six Aim-2 scenario families remain exploratory clinical replication units.</li>
-      </ul>
-      <div class="links">
-        <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/manuscript/CURRENT_PAPERS.md">Current paper state</a>
-        <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/manuscript/REVIEWER2_AB_v1.md">Reviewer #2 audit</a>
+  <div data-lang="en">
+    <div class="top">
+      <div>
+        <div class="eyebrow">PAIR · Psychosis AI Response</div>
+        <h1 class="title">Research dashboard</h1>
+        <div class="sub">A public, version-controlled workspace for evaluating how AI chat products and fixed model configurations respond to psychosis-related content. Public README, manuscript masters, and Pages content are maintained in synchronized English and Simplified Chinese versions.</div>
       </div>
-    </article>
+      <span class="pill">Research preparation · 2026-10-03</span>
+    </div>
 
-    <article class="card">
-      <div class="meta">Paper 2 · C · current working state: Master v2</div>
-      <h2>Psychosis-specific response-policy calibration</h2>
-      <p>PAIR-C evaluates one-clinical-cue-at-a-time minimal contrasts using clinician-defined acceptable intervention intervals <code>[L,U]</code> and prospectively annotated pair-level target direction.</p>
-      <h3>Current 64-item pilot</h3>
-      <ul>
-        <li>8 scenario families × 4 axes × 2 levels = 64 prompts.</li>
-        <li>Axes: conviction, insight, behavioral risk, evidence/plausibility.</li>
-        <li>Metrics: CCA, ordinal-step URS/ORS, Clinical-Cue Directional Concordance, Relevant Sensitivity.</li>
-        <li>Nuisance Invariance is <strong>not</strong> estimated in the current pilot.</li>
-        <li>Two-level contrasts test direction/sensitivity, not precise threshold location.</li>
-      </ul>
-      <div class="links">
-        <a class="btn" href="PAIR_C_CLINICIAN_REVIEW.html">Clinician review tool</a>
-        <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/manuscript/REVIEWER2_C_v1.md">Reviewer #2 audit</a>
-      </div>
-    </article>
+    <div class="warning"><strong>Evidence boundary.</strong> There are currently <strong>no real model-performance results</strong> reported here. Synthetic, mock, and dry-run outputs are engineering/rehearsal artifacts only and must not be interpreted as empirical rankings or claims about any product.</div>
+
+    <div class="grid">
+      <article class="card">
+        <div class="meta">Paper 1 · A+B · current master: v4</div>
+        <h2>Consumer-product psychosis audit</h2>
+        <p><strong>Aim 1:</strong> matched psychosis-related versus matched nonpsychotic prompts across Chinese-language consumer AI products.</p>
+        <p><strong>Aim 2:</strong> prespecified exploratory minimal-contrast substudy testing proportional response-policy changes when conviction, insight/alternative-explanation acceptance, or immediate behavioral risk changes.</p>
+        <h3>Manuscripts</h3>
+        <div class="links">
+          <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/manuscript/PAIR_AB_MASTER_v4_EN.md">English paper</a>
+          <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/manuscript/PAIR_AB_MASTER_v4_ZH.md">中文论文</a>
+          <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/manuscript/REVIEWER2_AB_v1.md">Reviewer #2 audit</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="meta">Paper 2 · C · current master: v2</div>
+        <h2>Psychosis-specific response-policy calibration</h2>
+        <p>PAIR-C evaluates one-clinical-cue-at-a-time minimal contrasts using clinician-defined acceptable intervention intervals <code>[L,U]</code> plus prospectively annotated pair-level target direction.</p>
+        <ul>
+          <li>8 scenario families × 4 axes × 2 levels = 64 prompts.</li>
+          <li>Axes: conviction, insight, behavioral risk, evidence/plausibility.</li>
+          <li>Metrics: CCA, ordinal-step URS/ORS, CDC, Relevant Sensitivity.</li>
+          <li>Nuisance Invariance is not estimated in the current pilot.</li>
+          <li>Two-level contrasts test direction/sensitivity, not precise threshold location.</li>
+        </ul>
+        <h3>Manuscripts</h3>
+        <div class="links">
+          <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/manuscript/PAIR_C_MASTER_v2_EN.md">English paper</a>
+          <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/manuscript/PAIR_C_MASTER_v2_ZH.md">中文论文</a>
+          <a class="btn" href="PAIR_C_CLINICIAN_REVIEW.html">Clinician review tool</a>
+          <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/manuscript/REVIEWER2_C_v1.md">Reviewer #2 audit</a>
+        </div>
+      </article>
+    </div>
+
+    <section class="section"><h2>Bilingual entry points</h2><div class="card"><div class="links">
+      <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/README.md">README · English</a>
+      <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/README.zh-CN.md">README · 中文</a>
+      <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/BILINGUAL_POLICY.md">Bilingual maintenance policy</a>
+    </div></div></section>
+
+    <section class="section"><h2>Protocol → data → paper chain</h2><div class="card"><p>The repository is the canonical source of truth for public collaboration-safe research state. Prompt versions, collection manifests, ratings, statistics, and manuscript claims should remain traceable without silent post-outcome definition changes.</p><div class="links">
+      <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/STATUS.md">STATUS</a>
+      <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/CANONICAL_HANDOFF.md">Canonical handoff</a>
+      <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/DECISIONS_LOG.md">Decisions</a>
+      <a class="btn" href="https://github.com/CochraneK/Pair/tree/main/routes">A/B/C routes</a>
+      <a class="btn" href="https://github.com/CochraneK/Pair/tree/main/results">Dry-run / QA results</a>
+      <a class="btn" href="https://github.com/CochraneK/Pair/tree/main/manuscript">Manuscript workspace</a>
+    </div></div></section>
+
+    <section class="section"><h2>Submission gates</h2><div class="good"><ul>
+      <li>Real institutional ethics determination where required.</li>
+      <li>Public preregistration or transparent disclosure of non-registration.</li>
+      <li>Exact consumer-product and API/model configuration manifests.</li>
+      <li>Real clinician prompt validation, policy intervals/directions, and response ratings.</li>
+      <li>Frozen analysis, software/session information, and empirical tables/figures.</li>
+      <li>Data Availability, Code Availability, authorship, funding, competing interests, and final CHART audit.</li>
+    </ul></div></section>
+
+    <div class="footer">PAIR · Psychosis AI Response · bilingual public research dashboard · updated 2026-10-03</div>
   </div>
 
-  <section class="section">
-    <h2>Protocol → data → paper chain</h2>
-    <div class="card">
-      <p>The canonical workflow is designed so that prompt versions, collection manifests, ratings, statistics, and manuscript claims can be traced without silently changing definitions after outcomes are known.</p>
-      <div class="links">
-        <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/STATUS.md">STATUS</a>
-        <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/CANONICAL_HANDOFF.md">Canonical handoff</a>
-        <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/DECISIONS_LOG.md">Decisions</a>
-        <a class="btn" href="https://github.com/CochraneK/Pair/tree/main/routes">A/B/C routes</a>
-        <a class="btn" href="https://github.com/CochraneK/Pair/tree/main/results">Dry-run / QA results</a>
-        <a class="btn" href="https://github.com/CochraneK/Pair/tree/main/manuscript">Manuscript workspace</a>
+  <div data-lang="zh">
+    <div class="top">
+      <div>
+        <div class="eyebrow">PAIR · Psychosis AI Response</div>
+        <h1 class="title">研究仪表盘</h1>
+        <div class="sub">这是一个公开、版本可追踪的研究工作区，用于评价消费级 AI 聊天产品和固定模型配置如何回应精神病性相关内容。公开 README、论文主稿和 GitHub Pages 内容均要求英文与简体中文同步维护。</div>
       </div>
+      <span class="pill">研究准备 · 2026-10-03</span>
     </div>
-  </section>
 
-  <section class="section">
-    <h2>Submission gates</h2>
-    <div class="good">
-      <ul>
-        <li>Real institutional ethics determination where required.</li>
-        <li>Public preregistration or transparent disclosure of non-registration.</li>
-        <li>Exact consumer-product and API/model configuration manifests.</li>
-        <li>Real clinician prompt validation, policy intervals/directions, and response ratings.</li>
-        <li>Frozen analysis, software/session information, and empirical tables/figures.</li>
-        <li>Data Availability, Code Availability, authorship, funding, competing interests, and final CHART audit.</li>
-      </ul>
+    <div class="warning"><strong>证据边界。</strong> 当前这里<strong>没有真实模型表现结果</strong>。Synthetic、mock 和 dry-run 输出仅用于工程、分析和论文演练，不能解释为任何产品的真实排名或实证结论。</div>
+
+    <div class="grid">
+      <article class="card">
+        <div class="meta">Paper 1 · A+B · 当前 Master：v4</div>
+        <h2>消费级 AI 产品精神病性内容审计</h2>
+        <p><strong>Aim 1：</strong> 比较中文消费级 AI 产品对精神病性提示词与严格匹配非精神病性提示词的回应恰当性。</p>
+        <p><strong>Aim 2：</strong> 预设的探索性最小临床对照子研究，检验 conviction、insight/接受替代解释或即时 behavioral risk 改变时，回应政策是否发生比例恰当的变化。</p>
+        <h3>论文</h3>
+        <div class="links">
+          <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/manuscript/PAIR_AB_MASTER_v4_ZH.md">中文论文</a>
+          <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/manuscript/PAIR_AB_MASTER_v4_EN.md">English paper</a>
+          <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/manuscript/REVIEWER2_AB_v1.md">Reviewer #2 压力测试</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="meta">Paper 2 · C · 当前 Master：v2</div>
+        <h2>精神病性场景 response-policy calibration</h2>
+        <p>PAIR-C 采用“一次只改变一个临床 cue”的最小对照设计，以医生定义的可接受干预区间 <code>[L,U]</code> 和预先标注的 pair-level target direction 评价模型回应。</p>
+        <ul>
+          <li>8 个 scenario families × 4 个轴 × 2 水平 = 64 条提示词。</li>
+          <li>轴：conviction、insight、behavioral risk、evidence/plausibility。</li>
+          <li>指标：CCA、ordinal-step URS/ORS、CDC、Relevant Sensitivity。</li>
+          <li>当前 pilot 不估计 Nuisance Invariance。</li>
+          <li>两水平对照用于方向/敏感性评价，不用于精确 threshold 定位。</li>
+        </ul>
+        <h3>论文</h3>
+        <div class="links">
+          <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/manuscript/PAIR_C_MASTER_v2_ZH.md">中文论文</a>
+          <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/manuscript/PAIR_C_MASTER_v2_EN.md">English paper</a>
+          <a class="btn" href="PAIR_C_CLINICIAN_REVIEW.html">临床审题工具</a>
+          <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/manuscript/REVIEWER2_C_v1.md">Reviewer #2 压力测试</a>
+        </div>
+      </article>
     </div>
-  </section>
 
-  <section class="section">
-    <h2>Repository</h2>
-    <p class="small">The repository is the canonical source of truth for public collaboration-safe research state. Binary exports generated in chat (for example DOCX/ZIP working copies) are not automatically mirrored into Git; canonical text, protocol, schema, code, and status files should be kept in Git.</p>
-    <div class="links"><a class="btn" href="https://github.com/CochraneK/Pair">Open CochraneK/Pair</a></div>
-  </section>
+    <section class="section"><h2>双语入口</h2><div class="card"><div class="links">
+      <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/README.zh-CN.md">README · 中文</a>
+      <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/README.md">README · English</a>
+      <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/BILINGUAL_POLICY.md">双语维护规则</a>
+    </div></div></section>
 
-  <div class="footer">PAIR · Psychosis AI Response · public research dashboard · updated 2026-10-03</div>
+    <section class="section"><h2>Protocol → 数据 → 论文链</h2><div class="card"><p>Git 仓库是对外协作安全内容的 canonical source of truth。Prompt 版本、采集 manifest、评分、统计和论文主张必须可追踪，不能在看到结果后静默修改定义。</p><div class="links">
+      <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/STATUS.md">STATUS</a>
+      <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/CANONICAL_HANDOFF.md">Canonical handoff</a>
+      <a class="btn" href="https://github.com/CochraneK/Pair/blob/main/DECISIONS_LOG.md">决策日志</a>
+      <a class="btn" href="https://github.com/CochraneK/Pair/tree/main/routes">A/B/C 路线</a>
+      <a class="btn" href="https://github.com/CochraneK/Pair/tree/main/results">Dry-run / QA</a>
+      <a class="btn" href="https://github.com/CochraneK/Pair/tree/main/manuscript">论文工作区</a>
+    </div></div></section>
+
+    <section class="section"><h2>投稿 Gate</h2><div class="good"><ul>
+      <li>按机构要求取得真实伦理认定。</li>
+      <li>完成公开预注册，或如实披露未公开预注册。</li>
+      <li>固定并记录消费级产品及 API/model configuration。</li>
+      <li>完成真实医生题目验证、policy interval/direction 和 response rating。</li>
+      <li>冻结统计分析、软件/session 信息并生成真实 Tables/Figures。</li>
+      <li>补齐 Data Availability、Code Availability、作者贡献、资助、利益冲突与最终 CHART 审核。</li>
+    </ul></div></section>
+
+    <div class="footer">PAIR · Psychosis AI Response · 中英双语公开研究仪表盘 · 更新于 2026-10-03</div>
+  </div>
 </div>
+<script>
+function setLang(lang){
+  document.querySelectorAll('[data-lang]').forEach(el=>el.style.display=el.getAttribute('data-lang')===lang?'block':'none');
+  document.getElementById('btn-en').classList.toggle('active',lang==='en');
+  document.getElementById('btn-zh').classList.toggle('active',lang==='zh');
+  document.documentElement.lang=lang==='zh'?'zh-CN':'en';
+  localStorage.setItem('pair-lang',lang);
+}
+(function(){
+  const saved=localStorage.getItem('pair-lang');
+  const preferred=saved || (navigator.language||'').toLowerCase().startsWith('zh')?'zh':'en';
+  setLang(preferred);
+})();
+</script>
 </body>
 </html>
