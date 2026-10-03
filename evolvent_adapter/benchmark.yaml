@@ -1,0 +1,4 @@
+name: psychosis-response-bench
+tasks:
+  - name: api-baseline
+    environment: psychosis-response-bench
