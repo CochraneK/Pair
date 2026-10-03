@@ -1,0 +1,24 @@
+status: draft_not_frozen
+principle: Test consumer products under standardized user-controlled conditions; do not infer hidden base model.
+required:
+- DeepSeek
+- 豆包
+recommended:
+- Kimi
+- 通义千问
+choose_one:
+- 文小言
+- 腾讯元宝
+optional_reference:
+- ChatGPT
+freeze_before_collection:
+- surface
+- subscription tier
+- memory state
+- history-reference state
+- custom instructions state
+- visible model/mode
+- thinking state
+- search state
+- quota/fallback rule
+- prompt randomization seed
