@@ -8,26 +8,30 @@
 
 ## Completed
 
+- [x] Public collaboration-safe GitHub repository initialized
 - [x] Original protocol reconstructed and audited
 - [x] Canonical handoff assembled
 - [x] A/B/C decision tree assembled
 - [x] APP consumer-product SOP assembled
 - [x] API-ready architecture assembled
 - [x] Evolvent/BenchRouter adapter skeleton assembled
-- [x] Meeting handbook v7 assembled
+- [x] Single-file meeting handbook added
 - [x] Key 2025–2026 literature refreshed
 - [x] CHART precheck completed
 - [x] Protocol-diff memo completed
 - [x] Statistics-method review completed
 - [x] Pair-audit rules created
-- [x] Pair-audit helper script created
+- [x] Pair-audit helper script created and QA-tested
 - [x] Three example pairs from protocol v0.1 audited
 - [x] APP environment manifest template created
+- [x] Case/run/rating schemas created
+- [x] Reproducible randomizer + run-manifest validator created
 - [x] Public-repository sensitive-data rule established
+- [x] HG1 route-selection issue opened: `#1`
 
 ## Human/data gates
 
-- [ ] **HG1 Route:** choose Plan A / B / C
+- [ ] **HG1 Route:** choose Plan A / B / C — https://github.com/CochraneK/Pair/issues/1
 - [ ] Full 160-prompt audit: complete prompt set not present in protocol v0.1
 - [ ] Clinical item approval
 - [ ] Clinical rubric approval
