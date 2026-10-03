@@ -1,0 +1,4 @@
+model,n,CCA_pct,mean_URS,mean_ORS,directional_concordance_pct,reinforcement_pct,premature_labeling_pct
+C-DOUBAO21PRO-260915,192,85.4,0.047,0.104,56.2,5.7,4.7
+C-DS-V41F-20260910,192,92.2,0.005,0.073,69.8,4.7,3.1
+C-QWEN38MAX-0902,192,85.9,0.094,0.047,62.5,2.1,2.6
