@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PAIR｜论文全文</title>
+<style>
+:root{--paper:#f4f0e8;--ink:#1f1d1a;--muted:#6d675f;--rule:#d6cec1;--accent:#7d2f2f;--soft:#ece5d8;--note:#efe8d8}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Songti SC","STSong","Noto Serif CJK SC","Source Han Serif SC","SimSun",serif;line-height:1.75}.wrap{max-width:980px;margin:auto;padding:28px 24px 80px}.bar{position:sticky;top:0;z-index:10;background:rgba(244,240,232,.96);border-bottom:1px solid var(--rule);padding:10px 0;display:flex;gap:8px;flex-wrap:wrap}.bar button,.bar a{border:1px solid var(--rule);background:transparent;color:var(--ink);padding:7px 11px;text-decoration:none;cursor:pointer;font:600 12px/1.2 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}.bar button.active{background:var(--soft)}.notice{margin:18px 0;padding:13px 16px;background:var(--note);border-left:3px solid var(--accent);font-size:14px}.paper{background:rgba(255,255,255,.30);padding:34px 42px;border:1px solid var(--rule)}h1{font-size:34px;line-height:1.22;margin:0 0 18px}h2{font-size:24px;margin:34px 0 12px;padding-top:8px;border-top:1px solid var(--rule)}h3{font-size:18px;margin:24px 0 8px}h4{font-size:15px;margin:18px 0 6px}p{margin:8px 0 14px}blockquote{margin:16px 0;padding:8px 16px;border-left:3px solid var(--accent);color:#514a43;background:rgba(255,255,255,.28)}ul,ol{padding-left:24px}li{margin:5px 0}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.9em;background:#e9e2d6;padding:1px 4px}a{color:#5c3d3d}.loading{padding:70px 20px;text-align:center;color:var(--muted)}.sep{border:0;border-top:2px solid var(--ink);margin:46px 0 32px}.example-badge{display:inline-block;font:700 11px/1.2 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}@media(max-width:720px){.wrap{padding:18px 12px 60px}.paper{padding:24px 18px}h1{font-size:28px}}@media print{.bar,.notice{display:none}.wrap{max-width:none;padding:0}.paper{border:0;background:white;padding:0}}
+</style>
+</head>
+<body><div class="wrap">
+<div class="bar"><a href="index.html">← 会议手册</a><button id="ab" class="active" onclick="setPaper('ab')">A+B</button><button id="c" onclick="setPaper('c')">PAIR-C</button><button id="zh" class="active" onclick="setLang('zh')">中文</button><button id="en" onclick="setLang('en')">English</button><button onclick="window.print()">打印 / PDF</button></div>
+<div class="notice" id="notice">正式 Master 保留真实数据占位；页面末尾附对话样例模块。当前样例为 synthetic rehearsal，不是实证结果。</div>
+<article id="paper" class="paper"><div class="loading">正在载入论文…</div></article>
+</div>
+<script>
+let currentPaper='ab', currentLang='zh';
+const files={
+ ab:{zh:['PAIR_AB_MASTER_v4_ZH.md','PAIR_AB_CONVERSATION_EXAMPLES_v1_ZH.md'],en:['PAIR_AB_MASTER_v4_EN.md','PAIR_AB_CONVERSATION_EXAMPLES_v1_EN.md']},
+ c:{zh:['PAIR_C_MASTER_v2_ZH.md','PAIR_C_CONVERSATION_EXAMPLES_v1_ZH.md'],en:['PAIR_C_MASTER_v2_EN.md','PAIR_C_CONVERSATION_EXAMPLES_v1_EN.md']}
+};
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function inline(s){let x=esc(s);x=x.replace(/`([^`]+)`/g,'<code>$1</code>');x=x.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');x=x.replace(/\*([^*]+)\*/g,'<em>$1</em>');x=x.replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank">$1</a>');return x}
+function md(src){const lines=src.replace(/\r/g,'').split('\n');let out='',list=null,para=[];function flushP(){if(para.length){out+='<p>'+inline(para.join(' '))+'</p>';para=[]}}function closeList(){if(list){out+='</'+list+'>';list=null}}
+ for(const raw of lines){const line=raw.trimEnd();if(!line.trim()){flushP();closeList();continue}let m;if((m=line.match(/^(#{1,4})\s+(.+)$/))){flushP();closeList();const n=m[1].length;out+=`<h${n}>${inline(m[2])}</h${n}>`;continue}if(line.startsWith('> ')){flushP();closeList();out+='<blockquote>'+inline(line.slice(2))+'</blockquote>';continue}if((m=line.match(/^[-*]\s+(.+)$/))){flushP();if(list!=='ul'){closeList();out+='<ul>';list='ul'}out+='<li>'+inline(m[1])+'</li>';continue}if((m=line.match(/^\d+\.\s+(.+)$/))){flushP();if(list!=='ol'){closeList();out+='<ol>';list='ol'}out+='<li>'+inline(m[1])+'</li>';continue}if(line==='---'){flushP();closeList();out+='<hr class="sep">';continue}para.push(line.trim())}flushP();closeList();return out}
+async function load(){const box=document.getElementById('paper');box.innerHTML='<div class="loading">正在载入论文…</div>';const pair=files[currentPaper][currentLang];const base='https://raw.githubusercontent.com/CochraneK/Pair/main/manuscript/';try{const [main,examples]=await Promise.all(pair.map(f=>fetch(base+f).then(r=>{if(!r.ok)throw new Error(f);return r.text()})));const label=currentLang==='zh'?'对话样例模块｜模拟演练':'Conversation exemplars | simulation rehearsal';box.innerHTML=md(main)+`<hr class="sep"><div class="example-badge">${label}</div>`+md(examples)}catch(e){box.innerHTML='<div class="loading">论文载入失败。可从 GitHub manuscript 目录直接打开对应 Markdown。</div>'}}
+function setPaper(p){currentPaper=p;document.getElementById('ab').classList.toggle('active',p==='ab');document.getElementById('c').classList.toggle('active',p==='c');load()}
+function setLang(l){currentLang=l;document.getElementById('zh').classList.toggle('active',l==='zh');document.getElementById('en').classList.toggle('active',l==='en');document.documentElement.lang=l==='zh'?'zh-CN':'en';document.getElementById('notice').textContent=l==='zh'?'正式 Master 保留真实数据占位；页面末尾附对话样例模块。当前样例为 synthetic rehearsal，不是实证结果。':'Canonical masters retain real-data placeholders. Conversation exemplars are appended below. Current examples are synthetic rehearsal only, not empirical findings.';load()}
+load();
+</script></body></html>
