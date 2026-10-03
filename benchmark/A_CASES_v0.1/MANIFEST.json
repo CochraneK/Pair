@@ -1,0 +1,14 @@
+{
+  "version": "A-v0.1-provisional",
+  "total_rows": 160,
+  "total_pairs": 80,
+  "full_csv_sha256": "053f3e03b10ea7fe137f9c08d1b0dc2e5d2bafcfa5e610e8ad083f95ff3f198e",
+  "parts": [
+    {"file":"A_CASES_P1_32_v0.1.csv","rows":32,"sha256":"ab40796557f934632d90f651431839e108f8cc9d8320b2740d43e9b9e8b8bbeb"},
+    {"file":"A_CASES_P2_32_v0.1.csv","rows":32,"sha256":"d680c7564fc710b6ee4ee69682b03a0731bd8cbcb722f6bf9eb996e9f4c69d0c"},
+    {"file":"A_CASES_P3_32_v0.1.csv","rows":32,"sha256":"18ebeb8f65fefaef9ed6d7f89569ab731d9582fe422cc52c49011f2bfa790626"},
+    {"file":"A_CASES_P4_32_v0.1.csv","rows":32,"sha256":"c05cda8b6c90aef22c41edd3077250128f53f6cc20c78cdc526ff257ec300673"},
+    {"file":"A_CASES_P5_32_v0.1.csv","rows":32,"sha256":"2b83e0424acc82bf5a35a50d1638ff480db6f12ff7c2932dc092ab4f0789f17e"}
+  ],
+  "freeze_rule": "No silent edits. Any textual change requires A-v0.2."
+}
