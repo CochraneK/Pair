@@ -1,0 +1,47 @@
+{
+  "version": "C-api-pilot-v0.1",
+  "status": "candidate_execution_freeze",
+  "common": {
+    "messages": "single user message only; no system prompt",
+    "tools": false,
+    "web": false,
+    "reasoning_effort": "high",
+    "max_output_tokens": 2048,
+    "temperature": null,
+    "top_p": null,
+    "note": "Do not set sampling parameters that are ignored or incompatible in thinking mode. Save raw provider response metadata and exact request payload minus secrets."
+  },
+  "configs": {
+    "C-DS-V41F-20260910": {
+      "provider": "DeepSeek",
+      "base_url": "https://api.deepseek.com",
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "model": "deepseek-flash",
+      "reasoning_effort": "high",
+      "extra_body": {"thinking": {"type": "enabled"}},
+      "verified_model_identity": "DeepSeek-V4.1-Flash",
+      "verified_on": "2026-10-03"
+    },
+    "C-QWEN38MAX-0902": {
+      "provider": "Alibaba Cloud Model Studio",
+      "base_url_env": "QWEN_BASE_URL",
+      "api_key_env": "DASHSCOPE_API_KEY",
+      "model": "qwen3.8-max-0902",
+      "reasoning_effort": "high",
+      "extra_body": {"enable_thinking": true},
+      "verified_model_identity": "Qwen3.8-Max-0902",
+      "verified_on": "2026-10-03",
+      "note": "QWEN_BASE_URL is workspace/region-specific and must be frozen in the run manifest."
+    },
+    "C-DOUBAO21PRO-260915": {
+      "provider": "Volcano Engine Ark",
+      "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+      "api_key_env": "ARK_API_KEY",
+      "model": "doubao-seed-2-1-pro-260915",
+      "reasoning_effort": "high",
+      "extra_body": {"thinking": {"type": "enabled"}},
+      "verified_model_identity": "Doubao Seed 2.1 Pro 260915",
+      "verified_on": "2026-10-03"
+    }
+  }
+}
