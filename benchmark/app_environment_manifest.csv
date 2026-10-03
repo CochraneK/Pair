@@ -1,0 +1,7 @@
+product_id,product_name,account_created_date,subscription_tier,surface,app_or_web_version,ui_language,region_or_locale,memory_available,memory_state,history_reference_available,history_reference_state,custom_instructions_state,model_selector_visible,selected_or_default_model,thinking_control_visible,thinking_state,search_control_visible,search_state,tool_access_notes,quota_policy_notes,fallback_observed,test_start,test_end,researcher,screenshot_settings_path,notes
+deepseek,DeepSeek,,free,,,,,unknown,,unknown,,blank/none,unknown,,unknown,,unknown,,,,,,,,,
+doubao,豆包,,free,,,,,unknown,,unknown,,blank/none,unknown,,unknown,,unknown,,,,,,,,,
+kimi,Kimi,,free,,,,,unknown,,unknown,,blank/none,unknown,,unknown,,unknown,,,,,,,,,
+qwen,通义千问,,free,,,,,unknown,,unknown,,blank/none,unknown,,unknown,,unknown,,,,,,,,,
+fifth_tbd,文小言 / 腾讯元宝（待团队二选一）,,free,,,,,unknown,,unknown,,blank/none,unknown,,unknown,,unknown,,,,,,,,,
+chatgpt_optional,ChatGPT（可选国际参照）,,free,,,,,unknown,,unknown,,blank/none,unknown,,unknown,,unknown,,,,,,,,,
