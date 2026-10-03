@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="370" viewBox="0 0 680 370">
+<style>text{font-family:Arial,"Microsoft YaHei",sans-serif;fill:#2b2824}.muted{fill:#6e675f}.axis{stroke:#8d857b;stroke-width:1}.mark{fill:#6c3030}</style>
+<rect width="100%" height="100%" fill="#fbf8f1"/><text x="24" y="28" font-size="16" font-weight="700">Simulated PAIR-C: calibration vs cue-direction sensitivity</text>
+<line class="axis" x1="80" y1="300" x2="610" y2="300"/><line class="axis" x1="80" y1="50" x2="80" y2="300"/>
+<circle class="mark" cx="154.2" cy="269.4" r="6"/><text x="162" y="262" font-size="11">C-DOUBAO21PRO-260915</text>
+<circle class="mark" cx="514.6" cy="80.6" r="6"/><text x="523" y="74" font-size="11">C-DS-V41F-20260910</text>
+<circle class="mark" cx="180.7" cy="181.9" r="6"/><text x="189" y="175" font-size="11">C-QWEN38MAX-0902</text>
+<text class="muted" x="240" y="355" font-size="11">Clinical Calibration Accuracy (%)</text><text class="muted" transform="translate(18 220) rotate(-90)" font-size="11">Directional concordance (%)</text></svg>
