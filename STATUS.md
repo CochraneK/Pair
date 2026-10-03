@@ -4,130 +4,115 @@
 
 ## Overall
 
-🟢 **Design/engineering preparation is complete and the end-to-end synthetic smoke pipeline has passed. Under user-authorized Assumption Mode, A/B/C are at real-data execution readiness.**
+🟢 **Design/engineering preparation is complete, the end-to-end synthetic smoke pipeline has passed, and both manuscript tracks have completed a pre-data Reviewer #2 stress test. Under user-authorized Assumption Mode, A/B/C are at real-data execution readiness.**
 
 Operational framing:
 
-> **A = main product-audit paper; B = nested active enhancement; C = separate fixed-API high-ceiling benchmark track.**
+> **Paper 1 = A primary product audit + B prespecified exploratory substudy.**  
+> **Paper 2 = C psychosis-specific response-policy calibration benchmark pilot.**
 
-See `ASSUMPTION_MODE_2026-10-03.md` for the evidence boundary: clinical review is treated as acceptable for workflow execution only; this does **not** fabricate real clinician sign-off.
+See `ASSUMPTION_MODE_2026-10-03.md` for the evidence boundary: workflow may proceed under assumed clinical acceptance, but real clinician sign-off/ethics/preregistration/results must never be fabricated.
 
 ## Completed foundation
 
-- [x] Public collaboration-safe GitHub repository initialized
-- [x] Original protocol reconstructed and audited
-- [x] Canonical handoff + A/B/C decision architecture
+- [x] public collaboration-safe repository initialized
+- [x] original protocol reconstructed/audited
+- [x] A/B/C decision architecture + canonical handoff
 - [x] APP SOP + API-ready architecture
 - [x] literature/novelty refresh + CHART precheck + statistics review
 - [x] pair-audit / randomization / manifest-validation tooling
-- [x] boundary metrics implemented and smoke-tested
-- [x] unified blinded rater manual candidate
-- [x] deterministic collection-schedule generator
-- [x] blinded rating-pack generator
+- [x] boundary/calibration metrics + smoke tests
+- [x] blinded rater manual candidate
+- [x] deterministic collection schedules
 - [x] Plan A CLMM analysis script
 - [x] **end-to-end synthetic smoke run passed: 184 outputs**
-- [x] synthetic run → blind pack → rating schema → boundary metrics chain validated
 
 ## Manuscript / submission layer
 
-- [x] **A+B upgraded into a submission-structured master manuscript** targeting npj Digital Medicine format, with JMIR Mental Health as a practical fallback
-- [x] 16 verified references integrated into the manuscript evidence chain
-- [x] Introduction and Discussion rewritten against 2025–2026 psychosis/mental-health benchmark literature
-- [x] CHART reporting map added: `manuscript/PAIR_CHART_MAP_v2.md`
-- [x] real-data replacement gate added: `manuscript/REAL_DATA_SWAP_MAP.md`
-- [x] verified reference library added: `manuscript/REFERENCES_VERIFIED_2026-10-03.md`
-- [x] Plan C explicitly separated into companion benchmark paper track: `manuscript/PAIR_C_COMPANION_PAPER_PLAN_v1.md`
-- [x] synthetic performance values removed from the submission master Results; only highlighted real-data placeholders remain
-- [x] formatted master DOCX rendered and visually QA-checked page-by-page outside Git
+### Paper 1 — A+B
+- [x] submission-structured master created
+- [x] literature and clinical-theory narrative rebuilt
+- [x] CHART map + real-data swap map created
+- [x] pre-data Reviewer #2 stress test completed: `manuscript/REVIEWER2_AB_v1.md`
+- [x] reviewer corrections frozen in manuscript logic as **A+B v4**: `manuscript/V4_STATUS.md`
+- [x] prompt-condition blinding overclaim removed; only product identity is a valid blind
+- [x] P5 disorganized-communication exclusion sensitivity analysis added
+- [x] product sampling-frame / version-break / brand-leakage rules added
+- [x] Aim 2 retained as exploratory because six scenario families are the clinical replication units
 
-The formatted master is **not submission-ready until all real-world placeholders are resolved**: ethics, preregistration, exact product versions/dates, real clinician validation, real outputs/ratings/statistics, persistent data/code DOI, and author declarations.
+### Paper 2 — C
+- [x] full companion manuscript master created
+- [x] pre-data Reviewer #2 stress test completed: `manuscript/REVIEWER2_C_v1.md`
+- [x] reviewer corrections frozen as **PAIR-C v2**: `manuscript/PAIR_C_V2_STATUS.md`
+- [x] framing narrowed from exact “boundary location” to **response-policy calibration under minimal clinical contrasts**
+- [x] 0–5 policy scale explicitly treated as ordinal escalation intensity
+- [x] URS/ORS treated as ordinal step distances, not interval-scale clinical severity
+- [x] CDC now requires direct clinician pair-level `target_direction ∈ {-1,0,+1}` rather than `[L,U]` midpoint arithmetic
+- [x] CCA explicitly separated from total clinical appropriateness
+- [x] ground-truth panel vs response-rating panel separation/freeze rule added
+- [x] generic “response policy” removed as a novelty claim
+- [x] benchmark-release contamination risk documented
+- [x] nuisance invariance remains **not estimated** in the current 64-item pilot
+
+Combined readiness matrix: `manuscript/SUBMISSION_READINESS_AFTER_R2.md`.
+
+Formatted local DOCX masters have been rendered and visually QA-checked page-by-page. They are **not submission-ready until all highlighted real-world placeholders are resolved**.
 
 ## Plan A — real collection-ready candidate
 
-- [x] 80 matched pairs / 160 prompts generated
-- [x] P1–P5 each contain 16 pairs / 32 prompts
-- [x] structural QA passed
-- [x] heuristic non-target risk mismatch after cleanup: 0
-- [x] text frozen as `A-v0.1-provisional`
-- [x] 5-product consumer APP set: DeepSeek / 豆包 / Kimi / 通义千问 / 腾讯元宝
-- [x] stratified 16-item psychosis stability subset frozen
-- [x] collection design fixed: **960 outputs**
-- [x] preregistration draft prepared
-- [x] confirmatory analysis script prepared
-- [x] smoke subset fixed: 20 prompts × 5 products = 100 outputs; engineering chain passed on synthetic fixture
+- [x] 80 matched pairs / 160 prompts across P1–P5
+- [x] structural QA and pair audit passed
+- [x] frozen as `A-v0.1-provisional`
+- [x] 5-product consumer APP set
+- [x] stratified 16-item psychosis stability subset
+- [x] collection design: **960 outputs**
+- [x] preregistration draft + confirmatory analysis script
+- [x] synthetic engineering smoke for 100-output subset passed
 
 ## Plan B — real pilot-ready candidate
 
 - [x] 6 families × 3 axes × 2 levels = 36 prompts
-- [x] 18/18 minimal-pair structure passed
-- [x] text frozen as `B-v0.1-provisional`
-- [x] engineering `[L,U]` intervals available under Assumption Mode
-- [x] 3-product pilot set: DeepSeek / 豆包 / 通义千问
-- [x] 3 independent runs/item/product
-- [x] collection design fixed: **324 outputs**
-- [x] boundary analysis metrics/code ready
-- [x] smoke subset fixed: 12 prompts × 3 products = 36 outputs; engineering chain passed on synthetic fixture
+- [x] 18 minimal pairs
+- [x] frozen as `B-v0.1-provisional`
+- [x] 3 APP products × 3 runs/item = **324 outputs**
+- [x] boundary/calibration metrics ready
+- [x] synthetic engineering smoke for 36-output subset passed
 
 ## Plan C — real API pilot-ready candidate
 
-- [x] narrow novelty/scoping review
-- [x] clinical ontology v0.1
-- [x] 64 prompts: 8 families × 4 axes × 2 levels
-- [x] structural validator passed
-- [x] fixed API candidate configurations verified on 2026-10-03
-- [x] API runner implemented
-- [x] collection design fixed: **576 outputs**
-- [x] boundary metrics ready
-- [x] smoke subset fixed: 16 prompts × 3 configs = 48 outputs
-- [x] smoke run exposed and corrected one design bug: `evidence/plausibility` is a clinically relevant axis, **not** a nuisance-invariance axis
-- [x] corrected metric dry-run handles positive and negative expected policy shifts
-- [x] NI is now explicitly `NA` for the 64-item pilot unless a separate nuisance module is frozen
-
-Correction record: `routes/C/DESIGN_CORRECTION_EVIDENCE_AXIS_2026-10-03.md`.
+- [x] 64 prompts = 8 families × 4 axes × 2 levels
+- [x] fixed API candidate configurations + runner
+- [x] planned **576 outputs**
+- [x] evidence/plausibility corrected as a clinically relevant axis, not nuisance
+- [x] positive and negative target directions supported
+- [x] NI explicitly `NA` until a true nuisance module is frozen
+- [ ] **before real C outputs:** clinician schema must include raw `[L,U]`, pair-level `target_direction`, `clinically_relevant_change`, manipulation success, second-axis change, major confound, and contraindicated behaviors
 
 ## Execution volume
 
-- A: 960 outputs
-- B: 324 outputs
-- C: 576 outputs
-- **Total if all executed: 1,860 outputs**
+- A: 960
+- B: 324
+- C: 576
+- **Total: 1,860 outputs**
 
 Canonical details: `execution/EXECUTION_PLAN_v0.1.md`.
 
 ## Preregistration / ethics
 
-- [x] Plan A+B preregistration draft prepared: `preregistration/PLAN_AB_PREREGISTRATION_DRAFT_v0.1.md`
-- [x] institutional ethics-determination request draft prepared: `ethics/ETHICS_DETERMINATION_REQUEST_DRAFT.md`
+- [x] A+B preregistration draft prepared
+- [x] institutional ethics-determination request draft prepared
 - [ ] real institutional determination obtained
-- [ ] real preregistration submitted/timestamped
-
-## Smoke result
-
-Engineering smoke report: `results/SMOKE_RUN_V1_2026-10-03.md`.
-
-This run used **synthetic/mock responses only**. It validates plumbing, not model quality.
-
-## What still requires real-world execution
-
-1. real institutional ethics determination if required by local policy;
-2. real preregistration submission/timestamp;
-3. APP settings/account snapshot at collection time;
-4. actual consumer-product querying for A/B;
-5. API credentials and actual C API calls;
-6. real clinician ratings/sign-off if manuscript claims clinical validation/ground truth;
-7. frozen statistics on real ratings;
-8. CHART audit, Reviewer-2 audit and pre-submission literature refresh.
-
-## Immediate next step
-
-**Run the real technical smoke pilot using the already frozen 184-output subset.**
-
-- A: 100 real APP outputs
-- B: 36 real APP outputs
-- C: 48 real API outputs
-
-If real authentication/UI/quota/API compatibility passes, execute the full frozen 1,860-output schedules without changing prompts, rubric or primary analyses.
+- [ ] real preregistration submitted/timestamped or transparent non-registration statement finalized
 
 ## Result boundary
 
-There are currently **no real model-performance results**. All existing smoke/dry-run values are synthetic engineering validation only.
+There are currently **no real model-performance results**. Synthetic/mock and realistic-simulation data are engineering/manuscript rehearsal only and must never be reported as empirical findings.
+
+## Immediate next step
+
+Run the **real technical smoke pilot** with frozen prompts/settings, then full collection if authentication/UI/quota/API checks pass:
+- A: 100 real APP smoke outputs
+- B: 36 real APP smoke outputs
+- C: 48 real API smoke outputs (only after the revised C clinician schema is frozen)
+
+After real data: frozen statistics → empirical tables/figures → populate Results/Discussion → **Reviewer #2 rerun** → final CHART/Nature Portfolio reporting audit → submission.
