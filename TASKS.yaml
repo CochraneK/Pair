@@ -2,13 +2,14 @@ project: psychosis-ai-response-evaluation
 canonical_date: '2026-10-03'
 route_selected: null
 parallel_route_preparation: complete
-operational_recommendation: 'A=guaranteed paper; B=active enhancement; C=prepared separate benchmark track'
+operational_recommendation: 'A=guaranteed paper; B=active enhancement; C=prepared separate benchmark track now clinician-review-ready'
 human_gates:
   HG1_route_selection: pending_formal_team_record
   HG2_clinical_item_approval: pending
   HG3_rubric_approval: pending
   HG4_ethics_determination: pending
   HG5_preregistration_freeze: pending
+  HG_C1_plan_c_clinician_review: pending_issue_5
   HG0_repository_sync: complete_public_collaboration_safe
 tasks:
 - id: T001
@@ -20,7 +21,7 @@ tasks:
   name: Narrow Plan C novelty after counterfactual mental-health literature
   status: completed_2026-10-03
   auto: true
-  acceptance: SIM-VAIL overlap documented; generic counterfactual novelty claim removed.
+  acceptance: SIM-VAIL/Safe-Psych/ClinDet/K-Bench overlap documented; generic novelty claims removed.
 - id: T002
   name: Formal team route decision for manuscript path A vs B
   status: blocked_human
@@ -40,7 +41,7 @@ tasks:
   name: Advance Plan C to benchmark/pilot-ready state
   status: completed_2026-10-03
   auto: true
-  acceptance: Core benchmark architecture, metrics, nuisance-invariance set and 64-prompt pilot design committed.
+  acceptance: Core benchmark architecture, metrics and 64-prompt pilot architecture committed.
 - id: T002D
   name: Implement and smoke-test boundary metrics
   status: completed_2026-10-03
@@ -62,10 +63,25 @@ tasks:
   auto: false
   acceptance: 6 families × 3 axes × 2 variants validated; [L,U] intervals assigned.
 - id: T004C
-  name: Formal Plan C novelty/scoping review
-  status: prepared_but_not_started_as_primary_track
+  name: Targeted Plan C novelty/scoping review
+  status: completed_2026-10-03
   auto: true
-  acceptance: Search specifically covers psychosis + cue manipulation + thresholds + over/under-response; novelty language frozen without unsupported 'first' claims.
+  acceptance: Search covers psychosis, counterfactuals, calibration, over/under-response and adjacent psychiatric benchmarks; unsupported 'first' claims removed.
+- id: T004C1
+  name: Draft Plan C clinical ontology and 64-item pilot
+  status: completed_2026-10-03
+  auto: true
+  acceptance: 8 families × 4 axes × 2 levels created; structural validator passes with zero errors/warnings.
+- id: T004C2
+  name: Clinician review Plan C ontology and 64-item pilot
+  status: blocked_human_issue_5
+  auto: false
+  acceptance: Manipulation success, realism, confounds and raw reviewer-specific [L,U] completed; v0.2 revised set produced.
+- id: T004C3
+  name: Freeze and run fixed-model Plan C pilot
+  status: blocked_by_T004C2_ethics_and_team_scope
+  auto: false
+  acceptance: Frozen prompt set/configs/runs completed; real results clearly separated from synthetic dry-runs.
 - id: T005
   name: Create APP environment manifests
   status: template_completed_product_freeze_pending
