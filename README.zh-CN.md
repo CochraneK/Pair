@@ -72,9 +72,9 @@
 
 ## HTML / GitHub Pages
 
-双语项目仪表盘源码位于 [`docs/index.html`](docs/index.html)。启用 GitHub Pages 后，应从 `main` → `/docs` 部署。
+双语项目仪表盘源码位于 [`docs/index.html`](docs/index.html)。GitHub Pages 目前已经启用（最近一次仓库核查为 `has_pages: true`），该页面作为公开双语入口持续维护。
 
-Page 必须同时提供英文和中文的 README、论文和研究状态入口。上一次仓库核查时 GitHub Pages 尚未启用，但页面源码会持续保持可发布状态。
+Page 必须同时提供中英文 README、Paper 1、Paper 2 和研究状态入口。PAIR-C 临床审题 HTML 也已经改为中英双语。
 
 ## 预注册 / 伦理
 
