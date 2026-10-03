@@ -72,9 +72,9 @@ Under [`ASSUMPTION_MODE_2026-10-03.md`](ASSUMPTION_MODE_2026-10-03.md), clinical
 
 ## HTML / GitHub Pages
 
-The bilingual dashboard source is [`docs/index.html`](docs/index.html). When GitHub Pages is enabled, deploy from `main` → `/docs`.
+The bilingual dashboard source is [`docs/index.html`](docs/index.html). GitHub Pages is now enabled for this repository (`has_pages: true` at the latest repository check), and the dashboard is maintained as the bilingual public entry point.
 
-The dashboard must expose both English and Chinese paper/README entry points. GitHub Pages was not enabled at the last repository check; the source is maintained Pages-ready.
+The Page must expose both English and Chinese README, Paper 1, Paper 2, and research-state entry points. The PAIR-C clinician review HTML is also maintained bilingually.
 
 ## Preregistration / ethics
 
