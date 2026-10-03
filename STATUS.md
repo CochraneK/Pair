@@ -4,99 +4,102 @@
 
 ## Overall
 
-🟡 **A/B/C are now all instantiated as concrete versioned research assets. The remaining blockers are clinical validation, ethics/preregistration, and real model data — not missing design work.**
+🟢 **Design/engineering preparation is now effectively complete. Under user-authorized Assumption Mode, A/B/C are advanced to preregistration/collection readiness.**
 
-Operational recommendation:
+Operational framing:
 
-> **A = guaranteed paper track with a complete AI-generated 160-prompt provisional bank; B = active enhancement with a frozen 36-prompt provisional pilot; C = separate high-ceiling benchmark track with a 64-item clinician-review pilot.**
+> **A = main product-audit paper; B = nested active enhancement; C = separate fixed-API high-ceiling benchmark track.**
 
-## Completed
+See `ASSUMPTION_MODE_2026-10-03.md` for the evidence boundary: clinical review is treated as acceptable for workflow execution only; this does **not** fabricate real clinician sign-off.
+
+## Completed foundation
 
 - [x] Public collaboration-safe GitHub repository initialized
 - [x] Original protocol reconstructed and audited
 - [x] Canonical handoff + A/B/C decision architecture
-- [x] APP SOP + API-ready benchmark architecture
-- [x] Literature/novelty refresh + CHART precheck + statistics review
-- [x] Pair-audit / randomization / manifest-validation tooling
-- [x] Boundary metrics implemented and synthetic smoke-tested
+- [x] APP SOP + API-ready architecture
+- [x] literature/novelty refresh + CHART precheck + statistics review
+- [x] pair-audit / randomization / manifest-validation tooling
+- [x] boundary metrics implemented and synthetic smoke-tested
+- [x] unified blinded rater manual candidate
+- [x] deterministic collection-schedule generator
+- [x] blinded rating-pack generator
+- [x] Plan A CLMM analysis script
 
-### Plan A
-- [x] protocol-ready + candidate SAP + results shell
-- [x] decision recorded to create the missing full bank inside PAIR
-- [x] **80 matched pairs / 160 prompts generated**
+## Plan A — collection-ready candidate
+
+- [x] 80 matched pairs / 160 prompts generated
 - [x] P1–P5 each contain 16 pairs / 32 prompts
-- [x] structural QA: 80/80 pairs
-- [x] very-low pair similarity (<0.35): 0
-- [x] major length imbalance (>35%): 0
+- [x] structural QA passed
 - [x] heuristic non-target risk mismatch after cleanup: 0
 - [x] text frozen as `A-v0.1-provisional`
-- [x] split domain files + manifest committed under `benchmark/A_CASES_v0.1/`
+- [x] 5-product consumer APP set frozen candidate: DeepSeek / 豆包 / Kimi / 通义千问 / 腾讯元宝
+- [x] stratified 16-item psychosis stability subset frozen
+- [x] collection design fixed: 960 outputs total
+- [x] preregistration draft prepared
+- [x] confirmatory analysis script prepared
 
-### Plan B
-- [x] protocol/SAP/results shell
-- [x] **6 families × 3 axes × 2 levels = 36 prompts generated**
+## Plan B — collection-ready pilot candidate
+
+- [x] 6 families × 3 axes × 2 levels = 36 prompts
 - [x] 18/18 minimal-pair structure passed
 - [x] text frozen as `B-v0.1-provisional`
-- [x] engineering-only default `[L,U]` intervals created so runner/statistics can dry-run
-- [x] explicit rule: engineering defaults are not clinician ground truth
-- [x] committed under `benchmark/B_PILOT_v0.1/`
+- [x] engineering `[L,U]` intervals available under Assumption Mode
+- [x] 3-product pilot set: DeepSeek / 豆包 / 通义千问
+- [x] 3 independent runs/item/product
+- [x] collection design fixed: 324 outputs total
+- [x] boundary analysis metrics/code ready
 
-### Plan C
+## Plan C — fixed-API pilot candidate
+
 - [x] narrow novelty/scoping review
 - [x] clinical ontology v0.1
-- [x] 64 candidate prompts: 8 families × 4 axes × 2 levels
-- [x] clinician review schema + freeze checklist
-- [x] structural validator passed: 64 rows / 32 pairs / 0 structural errors / 0 similarity warnings
-- [x] clinician-review gate: Issue #5
-- [x] clinician-review HTML tool
+- [x] 64 prompts: 8 families × 4 axes × 2 levels
+- [x] structural validator passed
+- [x] fixed API candidate configurations verified on 2026-10-03:
+  - DeepSeek `deepseek-flash` / V4.1-Flash
+  - Qwen `qwen3.8-max-0902`
+  - Doubao `doubao-seed-2-1-pro-260915`
+- [x] reasoning-enabled request settings candidate frozen
+- [x] API runner implemented
+- [x] collection design fixed: 576 outputs total
+- [x] boundary metrics ready
 
-## Current human/research gates
+## Execution volume
 
-### Plan A
-- [ ] clinician review of A-v0.1 domain fit / realism / severity / control matching
-- [ ] revise only through `A-v0.2` if needed
-- [ ] final rubric approval
-- [ ] ethics determination / exemption confirmation
-- [ ] preregistration freeze
-- [ ] actual consumer-APP collection
-- [ ] blinded clinician rating
-- [ ] frozen statistical analysis
+- A: 960 outputs
+- B: 324 outputs
+- C: 576 outputs
+- **Total if all executed: 1,860 outputs**
 
-### Plan B
-- [ ] clinician manipulation check on B-v0.1
-- [ ] clinicians replace engineering `[L,U]` defaults with independent clinical intervals
-- [ ] revise only through `B-v0.2` if needed
-- [ ] run 36-prompt pilot after sign-off
+Canonical details: `execution/EXECUTION_PLAN_v0.1.md`.
 
-### Plan C
-- [ ] HG-C1 clinician review of ontology + 64-item pilot: https://github.com/CochraneK/Pair/issues/5
-- [ ] clinician `[L,U]` annotations + revision/adjudication
-- [ ] explicit team approval that C is a distinct new research question/project
-- [ ] contribution/authorship boundary
-- [ ] ethics determination + preregistration + fixed-model pilot
+## Preregistration / ethics
 
-## What to do next
+- [x] Plan A+B preregistration draft prepared: `preregistration/PLAN_AB_PREREGISTRATION_DRAFT_v0.1.md`
+- [x] institutional ethics-determination request draft prepared: `ethics/ETHICS_DETERMINATION_REQUEST_DRAFT.md`
+- [ ] real institutional determination obtained
+- [ ] real preregistration submitted/timestamped
 
-### 1. Clinical validation, not more case generation
-A and B no longer depend on a missing student case bank.
+## What still requires real-world execution
 
-Review these canonical assets:
-- `benchmark/A_CASES_v0.1/`
-- `benchmark/B_PILOT_v0.1/`
-- `routes/C/PILOT_BLUEPRINTS_64.csv`
+1. institutional ethics determination;
+2. preregistration submission/freeze;
+3. APP settings/account snapshot at collection time;
+4. actual consumer-product querying for A/B;
+5. API credentials/workspace configuration and actual Plan-C API calls;
+6. actual clinician ratings/sign-off if the manuscript claims clinician validation/ground truth;
+7. frozen statistical analysis on real ratings;
+8. CHART audit, Reviewer-2 audit and pre-submission literature refresh.
 
-### 2. Keep all version boundaries strict
-- A text edits → `A-v0.2`
-- B text/clinical interval edits → `B-v0.2`
-- C clinician-revised pilot → `C-pilot-v0.2`
+## Immediate next step
 
-Never overwrite the frozen v0.1 evidence trail.
+Do **small technical smoke pilots before full collection**:
+- A/B: 5–10 prompts across the selected consumer products to detect UI, quota, fallback and capture problems;
+- C: 5–10 scheduled calls across all three fixed API configurations to detect provider/request incompatibilities.
 
-### 3. After clinician approval
-- A: preregister and run APP product audit
-- B: run the 36-prompt boundary pilot in parallel
-- C: run separately only after project/ownership/novelty gate
+If the smoke pilots pass, execute the frozen schedules without changing prompts/rubric/statistics.
 
 ## Result boundary
 
-There are currently **no real model-performance results**. Existing dry-runs validate data structure and metric software only.
+There are currently **no real model-performance results**. Existing outputs labelled dry-run/synthetic validate software and study structure only.
