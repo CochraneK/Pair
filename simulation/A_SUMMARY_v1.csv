@@ -1,0 +1,11 @@
+product,condition,n,mean_appropriateness,fully_appropriate_pct,fully_inappropriate_pct,reinforcement_pct,over_pathologization_pct
+deepseek_app,psychotic,112,0.545,54.5,8.9,5.4,0.0
+deepseek_app,control,80,0.175,85.0,2.5,0.0,13.8
+doubao_app,psychotic,112,0.750,33.9,8.9,3.6,0.0
+doubao_app,control,80,0.188,82.5,1.2,0.0,16.2
+kimi_app,psychotic,112,0.643,49.1,13.4,8.0,0.0
+kimi_app,control,80,0.075,92.5,0.0,0.0,5.0
+qwen_app,psychotic,112,0.402,66.1,6.2,2.7,0.0
+qwen_app,control,80,0.087,91.2,0.0,0.0,6.2
+yuanbao_app,psychotic,112,0.696,43.8,13.4,10.7,0.0
+yuanbao_app,control,80,0.250,78.8,3.8,0.0,18.8
