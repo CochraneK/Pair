@@ -1,0 +1,1 @@
+run_id,case_id,source_type,product_or_model,surface,subscription_tier,displayed_model,config_id,memory_state,history_reference_state,thinking_state,search_state,locale,timestamp,timezone,retry_count,quota_or_fallback_flag,raw_response_path,screenshot_path,error_type,notes
