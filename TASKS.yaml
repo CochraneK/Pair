@@ -2,7 +2,7 @@ project: psychosis-ai-response-evaluation
 canonical_date: '2026-10-03'
 route_selected: null
 parallel_route_preparation: complete
-operational_recommendation: 'A=guaranteed paper; B=active enhancement; C=prepared separate benchmark track now clinician-review-ready'
+operational_recommendation: 'A=guaranteed paper with AI-generated 160-prompt bank; B=active enhancement with frozen 36-prompt pilot; C=separate benchmark track clinician-review-ready'
 human_gates:
   HG1_route_selection: pending_formal_team_record
   HG2_clinical_item_approval: pending
@@ -32,11 +32,26 @@ tasks:
   status: completed_2026-10-03
   auto: true
   acceptance: Protocol, candidate SAP, results shell and freeze checklist committed.
+- id: T002A1
+  name: Generate full Plan A case bank inside PAIR
+  status: completed_2026-10-03
+  auto: true
+  acceptance: 80 matched pairs / 160 prompts across P1-P5 generated, QA-passed and frozen as A-v0.1-provisional.
 - id: T002B
   name: Advance Plan B to pilot-ready state
   status: completed_2026-10-03
   auto: true
-  acceptance: 36-prompt pilot design, clinician interval ground truth, SAP and results shell committed.
+  acceptance: Protocol, SAP, results shell and pilot design committed.
+- id: T002B1
+  name: Instantiate and freeze Plan B pilot
+  status: completed_2026-10-03
+  auto: true
+  acceptance: 6 families × 3 axes × 2 variants = 36 prompts, 18 minimal pairs, frozen as B-v0.1-provisional.
+- id: T002B2
+  name: Add engineering-only Plan B policy intervals
+  status: completed_2026-10-03
+  auto: true
+  acceptance: Dry-run [L,U] intervals created and explicitly labelled non-clinical / non-inferential.
 - id: T002C
   name: Advance Plan C to benchmark/pilot-ready state
   status: completed_2026-10-03
@@ -48,25 +63,25 @@ tasks:
   auto: true
   acceptance: CCA/URS/ORS/CDC/RS/NI code runs on synthetic fixture and dry-run is recorded.
 - id: T003
-  name: Import and audit original matched pairs
-  status: blocked_data_full_prompt_set_missing
-  auto: true
-  acceptance: Every one of the 80 psychotic/control pairs checked for non-psychosis risk/action differences.
+  name: Clinician-review Plan A AI-generated case bank
+  status: blocked_human
+  auto: false
+  acceptance: All 80 pairs reviewed for domain fit, realism, severity, control appropriateness and unintended clinical cues; revisions versioned as A-v0.2.
 - id: T004
-  name: Revise and clinician-review Plan A prompts
-  status: blocked_by_T003_and_human
+  name: Freeze clinician-approved Plan A prompts
+  status: blocked_by_T003
   auto: false
-  acceptance: All prompts frozen; clinician sign-off recorded.
+  acceptance: Clinician-approved case bank and sign-off record committed without overwriting A-v0.1.
 - id: T004B
-  name: Instantiate and clinician-review Plan B pilot prompts
-  status: blocked_human_base_families
+  name: Clinician-review Plan B pilot prompts and replace engineering [L,U]
+  status: blocked_human
   auto: false
-  acceptance: 6 families × 3 axes × 2 variants validated; [L,U] intervals assigned.
+  acceptance: 18 minimal pairs validated; independent clinician [L,U] intervals replace engineering defaults; revisions versioned as B-v0.2.
 - id: T004C
   name: Targeted Plan C novelty/scoping review
   status: completed_2026-10-03
   auto: true
-  acceptance: Search covers psychosis, counterfactuals, calibration, over/under-response and adjacent psychiatric benchmarks; unsupported 'first' claims removed.
+  acceptance: Search covers psychosis, counterfactuals, calibration, over/under-response and adjacent psychiatric benchmarks; unsupported first claims removed.
 - id: T004C1
   name: Draft Plan C clinical ontology and 64-item pilot
   status: completed_2026-10-03
