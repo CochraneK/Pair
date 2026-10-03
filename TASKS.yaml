@@ -1,0 +1,86 @@
+project: psychosis-ai-response-evaluation
+canonical_date: '2026-10-03'
+route_selected: null
+human_gates:
+  HG1_route_selection: pending
+  HG2_clinical_item_approval: pending
+  HG3_rubric_approval: pending
+  HG4_ethics_determination: pending
+  HG5_preregistration_freeze: pending
+  HG0_repository_sync: complete_public_collaboration_safe
+tasks:
+- id: T001
+  name: Update literature landscape
+  status: completed_2026-10-03
+  auto: true
+  acceptance: Peer-reviewed/preprint status verified; closest overlaps added; novelty memo dated.
+- id: T002
+  name: Choose Plan A/B/C
+  status: blocked_human
+  auto: false
+  acceptance: Team decision recorded in DECISIONS_LOG.md.
+- id: T003
+  name: Audit original matched pairs
+  status: partial_3_examples_only_full_prompt_set_missing
+  auto: true
+  acceptance: Every pair checked for non-psychosis risk/action differences.
+- id: T004
+  name: Revise and clinician-review prompts
+  status: blocked_human
+  auto: false
+  acceptance: All prompts frozen; clinician sign-off recorded.
+- id: T005
+  name: Create APP environment manifests
+  status: template_completed_route_selection_still_pending
+  auto: true
+  acceptance: One settings snapshot per product; account state documented.
+- id: T006
+  name: Pilot APP collection
+  status: blocked_by_T004_T005
+  auto: false
+  acceptance: Pilot completed without quota/fallback contamination; capture QA passes.
+- id: T007
+  name: Finalize rubric and rater manual
+  status: blocked_human
+  auto: false
+  acceptance: Pilot ratings completed; disagreements discussed; rubric frozen.
+- id: T008
+  name: Preregister protocol/SAP
+  status: blocked_human
+  auto: false
+  acceptance: Frozen version timestamped before main collection.
+- id: T009
+  name: Run main APP collection
+  status: blocked_by_T008
+  auto: false
+  acceptance: All planned runs present; raw immutable archive + screenshots + manifest.
+- id: T010
+  name: Generate blinded rating pack
+  status: blocked_by_T009
+  auto: true
+  acceptance: Brand leakage audit passed; raw source preserved separately.
+- id: T011
+  name: Clinical rating
+  status: blocked_human
+  auto: false
+  acceptance: All required raters complete; reliability calculated.
+- id: T012
+  name: Run frozen statistics
+  status: blocked_by_T011
+  auto: true
+  acceptance: Script reproduces all tables/figures from raw+ratings.
+- id: T013
+  name: CHART reporting audit
+  status: blocked_by_T012
+  auto: true
+  acceptance: All relevant CHART items mapped to manuscript/supplement.
+- id: T014
+  name: Independent Reviewer-2 audit
+  status: blocked_by_T012
+  auto: true
+  acceptance: Novelty, leakage, post-hoc changes, model claims and citation status reviewed.
+- id: T015
+  name: Pre-submission literature refresh
+  status: blocked_by_T014
+  auto: true
+  acceptance: Search updated through submission date; novelty claims revised if needed.
