@@ -1,17 +1,18 @@
 project: psychosis-ai-response-evaluation
 canonical_date: '2026-10-03'
 assumption_mode: true
+ethics_assumption_mode: true
 assumption_mode_note: >-
-  User authorized proceeding as if clinical item/rubric review is acceptable for workflow execution.
-  This is not evidence of real clinician sign-off and cannot be represented as such in research claims.
+  User authorized proceeding as if clinical item/rubric review and ethics gate are acceptable for workflow execution.
+  This is not evidence of real clinician sign-off or institutional ethics approval and cannot be represented as such in research claims.
 operational_recommendation: 'A=main paper; B=nested enhancement; C=separate fixed-API benchmark track'
 
 human_gates:
   HG1_route_selection: operationally_resolved_A_plus_B_main_C_separate_candidate
   HG2_clinical_item_approval: assumed_pass_execution_only_real_evidence_missing
   HG3_rubric_approval: assumed_pass_execution_only_real_evidence_missing
-  HG4_ethics_determination: pending_real_institutional_action
-  HG5_preregistration: draft_complete_submission_pending
+  HG4_ethics_determination: assumed_pass_execution_only_real_institutional_evidence_missing
+  HG5_preregistration: internal_freeze_complete_formal_registry_submission_pending
   HG_C1_plan_c_clinician_review: assumed_pass_execution_only_real_evidence_missing
 
 execution_counts:
@@ -19,6 +20,12 @@ execution_counts:
   plan_b: 324
   plan_c: 576
   total: 1860
+
+smoke_counts:
+  plan_a: 100
+  plan_b: 36
+  plan_c: 48
+  total: 184
 
 tasks:
 - id: T001
@@ -40,9 +47,9 @@ tasks:
 
 - id: T002C
   name: Plan C pilot architecture and novelty narrowing
-  status: completed_2026-10-03
+  status: completed_with_design_correction_2026-10-03
   auto: true
-  acceptance: 64 prompts, 3 fixed API configs, metrics and runner prepared.
+  acceptance: 64 prompts, 3 fixed API configs, metrics and runner prepared; evidence/plausibility corrected as clinically relevant axis, NI separated into dedicated nuisance module.
 
 - id: T003
   name: Clinical item/rubric review
@@ -54,7 +61,7 @@ tasks:
   name: Freeze deterministic collection schedules
   status: completed_2026-10-03
   auto: true
-  acceptance: Seeds/counts frozen; generator committed; A=960, B=324, C=576.
+  acceptance: Seeds/counts frozen; A=960, B=324, C=576.
 
 - id: T005
   name: Freeze consumer-product and API configuration candidates
@@ -69,56 +76,56 @@ tasks:
   acceptance: Unified rater manual and blinded pack generator committed.
 
 - id: T007
-  name: Prepare preregistration draft
-  status: completed_draft_submission_pending
+  name: Freeze preregistration internally
+  status: completed_internal_freeze_not_formally_registered
   auto: true
-  acceptance: Plan A+B preregistration text exists; actual timestamped submission remains human/institutional action.
+  acceptance: `preregistration/PLAN_AB_INTERNAL_FREEZE_v1.0_NOT_REGISTERED.md` committed before real outcome inspection.
 
 - id: T008
   name: Obtain ethics determination
-  status: pending_real_institutional_action
+  status: assumed_pass_execution_only_real_institutional_action_still_missing
   auto: false
-  acceptance: Dated written determination stored and accurately cited.
+  acceptance: Real dated written determination required for any manuscript claim of approval/exemption.
 
 - id: T009
-  name: Submit preregistration
-  status: pending_after_ethics_or_local_policy_check
+  name: Submit formal preregistration
+  status: optional_external_action_pending_internal_freeze_complete
   auto: false
-  acceptance: Frozen protocol/SAP timestamped before main outcome inspection.
+  acceptance: Registry timestamp stored if team formally submits; internal Git freeze is not misrepresented as a registry preregistration.
 
 - id: T010
   name: A/B APP technical smoke pilot
-  status: ready_to_execute_external
+  status: synthetic_pipeline_passed_real_app_smoke_pending
   auto: false
-  acceptance: 5-10 prompts across selected products; no unresolved account/UI/quota/fallback/capture problems.
+  acceptance: Frozen real smoke subset A=100/B=36; real account/UI/quota/fallback/capture problems resolved before full collection.
 
 - id: T011
   name: C fixed-API technical smoke pilot
-  status: ready_but_requires_api_credentials
+  status: synthetic_pipeline_passed_real_api_smoke_requires_credentials
   auto: false
-  acceptance: 5-10 scheduled calls across all 3 configs; exact request metadata preserved; no provider incompatibility.
+  acceptance: Frozen real smoke subset C=48 across 3 configs; provider authentication/request compatibility must pass.
 
 - id: T012
   name: Run full Plan A consumer-product collection
-  status: blocked_by_real_smoke_pilot_and_preregistration
+  status: blocked_by_real_app_smoke_only_under_assumption_mode
   auto: false
   acceptance: 960 scheduled outputs or fully documented deviations; raw immutable archive + manifest.
 
 - id: T013
   name: Run full Plan B product pilot
-  status: blocked_by_real_smoke_pilot_and_preregistration
+  status: blocked_by_real_app_smoke_only_under_assumption_mode
   auto: false
   acceptance: 324 scheduled outputs or fully documented deviations.
 
 - id: T014
   name: Run full Plan C fixed-API pilot
-  status: blocked_by_api_keys_smoke_pilot_and_separate_scope_freeze
+  status: blocked_by_api_credentials_and_real_api_smoke
   auto: false
   acceptance: 576 scheduled outputs or fully documented deviations.
 
 - id: T015
   name: Generate blinded rating packs
-  status: tooling_complete_waiting_for_real_outputs
+  status: tooling_and_synthetic_smoke_complete_waiting_for_real_outputs
   auto: true
   acceptance: Brand leakage audit passed; private blind mapping preserved separately.
 
@@ -130,7 +137,7 @@ tasks:
 
 - id: T017
   name: Run frozen statistics
-  status: analysis_tooling_ready_waiting_for_real_ratings
+  status: analysis_tooling_and_synthetic_smoke_ready_waiting_for_real_ratings
   auto: true
   acceptance: Scripts reproduce tables/figures from frozen real data and save environment/session metadata.
 
