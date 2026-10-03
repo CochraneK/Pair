@@ -1,10 +1,15 @@
 # Current manuscript state
 
+[English](CURRENT_PAPERS.md) | [简体中文](CURRENT_PAPERS.zh-CN.md)
+
 Updated: 2026-10-03
 
 ## Paper 1 — A+B
 
 **Canonical working version:** A+B Master v4
+
+- English master: [`PAIR_AB_MASTER_v4_EN.md`](PAIR_AB_MASTER_v4_EN.md)
+- 中文主稿: [`PAIR_AB_MASTER_v4_ZH.md`](PAIR_AB_MASTER_v4_ZH.md)
 
 Scientific role:
 - Aim 1: confirmatory matched psychosis-related vs matched-control consumer-product audit.
@@ -17,11 +22,12 @@ Reviewer-2 corrections already incorporated into the design state:
 - brand-leakage audit is required;
 - Aim 2 remains exploratory because six scenario families are the clinical replication units.
 
-**Important:** the complete formatted DOCX generated in ChatGPT is a working artifact; this repository currently stores the canonical protocol/method/statistics/reviewer state rather than every binary export.
-
 ## Paper 2 — C
 
 **Canonical working version:** PAIR-C Master v2
+
+- English master: [`PAIR_C_MASTER_v2_EN.md`](PAIR_C_MASTER_v2_EN.md)
+- 中文主稿: [`PAIR_C_MASTER_v2_ZH.md`](PAIR_C_MASTER_v2_ZH.md)
 
 Scientific role:
 - development and pilot evaluation of psychosis-specific conversational response-policy calibration under one-clinical-cue-at-a-time minimal contrasts;
@@ -36,6 +42,10 @@ Key corrections:
 - URS/ORS are ordinal step distances and must be accompanied by categorical/binary summaries;
 - evidence/plausibility is clinically relevant and is not nuisance invariance;
 - Nuisance Invariance is not estimated in the current 64-item pilot.
+
+## Bilingual publication rule
+
+Public README, current manuscript masters, HTML dashboards and GitHub Pages are maintained in synchronized English and Simplified Chinese versions. See [`../BILINGUAL_POLICY.md`](../BILINGUAL_POLICY.md).
 
 ## Empirical-result boundary
 
