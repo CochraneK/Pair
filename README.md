@@ -20,9 +20,10 @@ PAIR supports three routes without silently changing the original student's rese
 4. [`DECISION_TREE.md`](DECISION_TREE.md)
 5. [`TASKS.yaml`](TASKS.yaml)
 
-Meeting materials:
+Meeting / decision:
 - [`docs/meeting/PAIR_MEETING_v1.html`](docs/meeting/PAIR_MEETING_v1.html) — single-file meeting handbook; download/open locally in a browser
 - [HG1 Issue #1 — choose Plan A/B/C](../../issues/1)
+- [Data Gate Issue #2 — add the complete 160-prompt set](../../issues/2)
 
 ## Research principles
 
@@ -47,10 +48,12 @@ Default exclusions:
 
 Use manifests/hashes for large or sensitive raw assets. See [`DATA_POLICY.md`](DATA_POLICY.md).
 
+No open-source/open-data licence has been selected yet; see [`LICENSE_STATUS.md`](LICENSE_STATUS.md).
+
 ## Current blockers
 
 - **HG1:** team selects Plan A / B / C in [Issue #1](../../issues/1)
-- full 160-prompt set is not yet present in the available v0.1 protocol
+- complete 160-prompt set is missing from the available v0.1 protocol; tracked in [Issue #2](../../issues/2)
 - clinician item/rubric approval
 - ethics determination
 - preregistration freeze
