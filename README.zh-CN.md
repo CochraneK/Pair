@@ -6,7 +6,7 @@
 
 这是一个以论文发表为导向、采用版本控制的研究工作区，用于评估消费级 AI 聊天产品以及固定 API 模型配置如何回应精神病性相关内容。
 
-> **双语规则：** 对外公开的 README、论文主稿、HTML 仪表盘和 GitHub Pages 必须同步维护英文与简体中文版本。详见 [`BILINGUAL_POLICY.md`](BILINGUAL_POLICY.md)。
+> **双语规则：** 对外公开的 README、论文主稿、HTML 和 GitHub Pages 必须同步维护英文与简体中文版本。详见 [`BILINGUAL_POLICY.md`](BILINGUAL_POLICY.md)。
 
 ## 当前状态
 
@@ -25,12 +25,12 @@
 
 ## 建议从这里开始
 
-1. [`STATUS.md`](STATUS.md)
-2. [`CANONICAL_HANDOFF.md`](CANONICAL_HANDOFF.md)
-3. [`TASKS.yaml`](TASKS.yaml)
-4. [`DECISIONS_LOG.md`](DECISIONS_LOG.md)
-5. [`execution/COLLECTION_READINESS_2026-10-03.md`](execution/COLLECTION_READINESS_2026-10-03.md)
-6. [`execution/EXECUTION_PLAN_v0.1.md`](execution/EXECUTION_PLAN_v0.1.md)
+1. [`docs/index.html`](docs/index.html) —— GitHub Pages 默认的“研究讨论手册”风格首页
+2. [`docs/dashboard.html`](docs/dashboard.html) —— 技术项目索引
+3. [`STATUS.md`](STATUS.md)
+4. [`CANONICAL_HANDOFF.md`](CANONICAL_HANDOFF.md)
+5. [`TASKS.yaml`](TASKS.yaml)
+6. [`DECISIONS_LOG.md`](DECISIONS_LOG.md)
 7. [`manuscript/CURRENT_PAPERS.md`](manuscript/CURRENT_PAPERS.md)
 
 ## 论文
@@ -41,6 +41,7 @@
 - 英文主稿：[`manuscript/PAIR_AB_MASTER_v4_EN.md`](manuscript/PAIR_AB_MASTER_v4_EN.md)
 - 中文主稿：[`manuscript/PAIR_AB_MASTER_v4_ZH.md`](manuscript/PAIR_AB_MASTER_v4_ZH.md)
 - Reviewer #2 压力测试：[`manuscript/REVIEWER2_AB_v1.md`](manuscript/REVIEWER2_AB_v1.md)
+- 模拟结果演练：[`English`](manuscript/simulation/PAIR_AB_REHEARSAL_RESULTS_EN.md) | [`中文`](manuscript/simulation/PAIR_AB_REHEARSAL_RESULTS_ZH.md)
 
 ### Paper 2 — C
 **基于最小临床对照的精神病性场景 response-policy calibration**
@@ -48,6 +49,17 @@
 - 英文主稿：[`manuscript/PAIR_C_MASTER_v2_EN.md`](manuscript/PAIR_C_MASTER_v2_EN.md)
 - 中文主稿：[`manuscript/PAIR_C_MASTER_v2_ZH.md`](manuscript/PAIR_C_MASTER_v2_ZH.md)
 - Reviewer #2 压力测试：[`manuscript/REVIEWER2_C_v1.md`](manuscript/REVIEWER2_C_v1.md)
+- 模拟结果演练：[`English`](manuscript/simulation/PAIR_C_REHEARSAL_RESULTS_EN.md) | [`中文`](manuscript/simulation/PAIR_C_REHEARSAL_RESULTS_ZH.md)
+
+## 投稿级分析层
+
+论文直接使用的分析代码位于 [`analysis/publication/`](analysis/publication/)：
+- `plan_a_primary_clmm.R` —— A 的真实 primary cumulative-link mixed model；
+- `plan_bc_family_aware_analysis.py` —— B/C 的 item-first / family-aware calibration 分析；
+- `make_publication_figures.py` —— 从冻结分析表生成论文图；
+- `REAL_DATA_CONTRACT.md` —— 真实数据字段和 merge 规则。
+
+目前已经用 `SYNTHETIC_REALISTIC_SIMULATION` 做过一次完整的图表与论文演练，但这些模拟数值和图**不是实证结果**。
 
 ## 已冻结/候选研究资产
 
@@ -72,9 +84,13 @@
 
 ## HTML / GitHub Pages
 
-双语项目仪表盘源码位于 [`docs/index.html`](docs/index.html)。GitHub Pages 目前已经启用（最近一次仓库核查为 `has_pages: true`），该页面作为公开双语入口持续维护。
+GitHub Pages 已经启用。
 
-Page 必须同时提供中英文 README、Paper 1、Paper 2 和研究状态入口。PAIR-C 临床审题 HTML 也已经改为中英双语。
+- [`docs/index.html`](docs/index.html) 现在恢复为**纸张感、会议讨论手册风格**，适合老师和同学共同讨论，不再以 dashboard 作为默认视觉。
+- [`docs/dashboard.html`](docs/dashboard.html) 保留简洁的技术导航/项目索引功能。
+- [`docs/PAIR_C_CLINICIAN_REVIEW.html`](docs/PAIR_C_CLINICIAN_REVIEW.html) 是中英双语临床审题工具。
+
+Page 必须同时提供中英文 README、Paper 1、Paper 2、研究状态和讨论材料入口。
 
 ## 预注册 / 伦理
 
@@ -135,6 +151,6 @@ Page 必须同时提供中英文 README、Paper 1、Paper 2 和研究状态入�
 5. 为 C 提供真实 API 凭证并运行 smoke/full pilot；
 6. 若论文要声称临床验证或 ground truth，获得真实医生审核与评分；
 7. 在真实数据上运行冻结统计分析；
-8. 完成最终 CHART、Reviewer #2 与文献更新检查。
+8. 用真实数据重新生成表格/图，重写 Results/Discussion，并完成最终 CHART、Reviewer #2 与文献更新检查。
 
 目前仓库中**没有真实模型表现结果**；现有 synthetic / dry-run 内容仅用于软件、结构、分析和论文演练。
