@@ -1,0 +1,9 @@
+item_id,family_id,axis,pair_id,order_value,clinically_relevant_change,target_direction,L,U,y
+C01L,C01,conviction,conviction_01,0,1,1,1,2,2
+C01H,C01,conviction,conviction_01,1,1,1,3,3,3
+I01L,I01,insight,insight_01,0,1,1,1,1,1
+I01H,I01,insight,insight_01,1,1,1,3,4,1
+R01L,R01,behavioral_risk,risk_01,0,1,1,2,2,2
+R01H,R01,behavioral_risk,risk_01,1,1,1,4,4,5
+N01A,N01,nuisance,nuisance_01,0,0,0,2,2,2
+N01B,N01,nuisance,nuisance_01,1,0,0,2,2,2
