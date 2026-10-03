@@ -10,8 +10,6 @@
 
 - 英文主稿：[`PAIR_AB_MASTER_v4_EN.md`](PAIR_AB_MASTER_v4_EN.md)
 - 中文主稿：[`PAIR_AB_MASTER_v4_ZH.md`](PAIR_AB_MASTER_v4_ZH.md)
-- 英文对话样例：[`PAIR_AB_CONVERSATION_EXAMPLES_v1_EN.md`](PAIR_AB_CONVERSATION_EXAMPLES_v1_EN.md)
-- 中文对话样例：[`PAIR_AB_CONVERSATION_EXAMPLES_v1_ZH.md`](PAIR_AB_CONVERSATION_EXAMPLES_v1_ZH.md)
 
 科学定位：
 - Aim 1：confirmatory matched psychosis-related vs matched-control consumer-product audit；
@@ -24,16 +22,12 @@
 - 要求 brand-leakage audit；
 - Aim 2 因只有 6 个 scenario families，始终保持探索性定位。
 
-**对话样例规则：**正式论文必须展示代表性的 prompt-response 例子。选择规则预先冻结：1 组 Aim-1 matched pair；1 组 Aim-2 minimal pair；如果展示 failure case，则按预设频率/medoid 规则选典型类别，避免为了叙事方便 cherry-pick。
-
 ## Paper 2 — C
 
 **当前 canonical working version：** PAIR-C Master v2
 
 - 英文主稿：[`PAIR_C_MASTER_v2_EN.md`](PAIR_C_MASTER_v2_EN.md)
 - 中文主稿：[`PAIR_C_MASTER_v2_ZH.md`](PAIR_C_MASTER_v2_ZH.md)
-- 英文对话样例：[`PAIR_C_CONVERSATION_EXAMPLES_v1_EN.md`](PAIR_C_CONVERSATION_EXAMPLES_v1_EN.md)
-- 中文对话样例：[`PAIR_C_CONVERSATION_EXAMPLES_v1_ZH.md`](PAIR_C_CONVERSATION_EXAMPLES_v1_ZH.md)
 
 科学定位：
 - 开发和试点评价 psychosis-specific conversational response-policy calibration；
@@ -50,19 +44,29 @@
 - evidence/plausibility 是临床相关变量，不是 nuisance；
 - 当前 64 题 pilot 不估计 Nuisance Invariance。
 
-**对话样例规则：**正文至少展示 1 组与主要发现相关的 minimal clinical-contrast 对话；更多样例进入 Supplement。选择不能依赖“哪句话更戏剧化”。
+## 对话样例报告规则
 
-## GitHub Pages 会议界面
+两篇论文正文都必须包含可直接阅读、可追溯的 prompt-response 对话样例，而不是只有汇总统计。为减少 cherry-picking，样例选择规则必须在解释产品/配置层结果之前冻结。
 
-GitHub Pages 是预期的会议/讲解主界面，而不是普通仓库首页。
-- `docs/index.html` 是会议讨论手册；
-- `docs/papers.html` 在 Page 内嵌 A+B 与 C 两篇主稿，并支持中文/English 切换；
-- 每篇嵌入式论文后自动附上对应的对话样例模块；
-- `docs/dashboard.html` 保留为技术项目索引，不作为会议主界面。
+- Paper 1：一组 psychosis/matched-control pair；一个具有临床意义的回应不足或 reinforcement 案例；若存在，再展示一个 over-pathologization、unnecessary escalation 等相反方向错误。
+- Paper 2：一组 calibration 合格的 minimal pair；一组 under-response pair；若存在，再展示一个 over-response / premature escalation 案例。
+- 正文报告 prompt/response 摘录及评分、区间、target direction 等关键信息；许可范围内将完整案例放 Supplement。
+- Synthetic 样例只能用于明确标注的 rehearsal manuscript 和会议 Page，不能冒充真实结果。
+
+Canonical 规则：[`DIALOGUE_EXAMPLE_REPORTING_RULE.md`](DIALOGUE_EXAMPLE_REPORTING_RULE.md)。
+
+## GitHub Pages 作为会议主展示面
+
+GitHub Pages 不是单纯仓库 dashboard，而是当前会议讲解的主要界面。`docs/index.html` 使用讨论手册风格，并把两篇论文直接嵌入 Page：
+
+- `docs/paper_ab.html`
+- `docs/paper_c.html`
+
+两篇 paper reader 均支持中英文切换，并展示明确标注的模拟对话案例。技术 dashboard 只保留为次要入口。
 
 ## 双语公开规则
 
-公开 README、当前论文 Master、对话样例模块、HTML 会议页和 GitHub Pages 均需英文与简体中文同步维护。详见 [`../BILINGUAL_POLICY.md`](../BILINGUAL_POLICY.md)。
+公开 README、当前论文 Master、HTML 仪表盘和 GitHub Pages 均需英文与简体中文同步维护。详见 [`../BILINGUAL_POLICY.md`](../BILINGUAL_POLICY.md)。
 
 ## 实证结果边界
 
