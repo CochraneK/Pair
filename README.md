@@ -6,7 +6,7 @@
 
 A publication-oriented research workspace for evaluating how consumer AI chat products and fixed API model configurations respond to psychosis-related content.
 
-> **Bilingual rule:** public-facing README, manuscript masters, HTML dashboards, and GitHub Pages must be maintained in synchronized English and Simplified Chinese versions. See [`BILINGUAL_POLICY.md`](BILINGUAL_POLICY.md).
+> **Bilingual rule:** public-facing README, manuscript masters, HTML and GitHub Pages must be maintained in synchronized English and Simplified Chinese versions. See [`BILINGUAL_POLICY.md`](BILINGUAL_POLICY.md).
 
 ## Current state
 
@@ -25,12 +25,12 @@ Under [`ASSUMPTION_MODE_2026-10-03.md`](ASSUMPTION_MODE_2026-10-03.md), clinical
 
 ## Start here
 
-1. [`STATUS.md`](STATUS.md)
-2. [`CANONICAL_HANDOFF.md`](CANONICAL_HANDOFF.md)
-3. [`TASKS.yaml`](TASKS.yaml)
-4. [`DECISIONS_LOG.md`](DECISIONS_LOG.md)
-5. [`execution/COLLECTION_READINESS_2026-10-03.md`](execution/COLLECTION_READINESS_2026-10-03.md)
-6. [`execution/EXECUTION_PLAN_v0.1.md`](execution/EXECUTION_PLAN_v0.1.md)
+1. [`docs/index.html`](docs/index.html) — paper-like discussion handbook used as the GitHub Pages landing page
+2. [`docs/dashboard.html`](docs/dashboard.html) — technical project index
+3. [`STATUS.md`](STATUS.md)
+4. [`CANONICAL_HANDOFF.md`](CANONICAL_HANDOFF.md)
+5. [`TASKS.yaml`](TASKS.yaml)
+6. [`DECISIONS_LOG.md`](DECISIONS_LOG.md)
 7. [`manuscript/CURRENT_PAPERS.md`](manuscript/CURRENT_PAPERS.md)
 
 ## Papers
@@ -41,6 +41,7 @@ Under [`ASSUMPTION_MODE_2026-10-03.md`](ASSUMPTION_MODE_2026-10-03.md), clinical
 - English master: [`manuscript/PAIR_AB_MASTER_v4_EN.md`](manuscript/PAIR_AB_MASTER_v4_EN.md)
 - 中文主稿: [`manuscript/PAIR_AB_MASTER_v4_ZH.md`](manuscript/PAIR_AB_MASTER_v4_ZH.md)
 - Reviewer #2 audit: [`manuscript/REVIEWER2_AB_v1.md`](manuscript/REVIEWER2_AB_v1.md)
+- Simulation-results rehearsal: [`English`](manuscript/simulation/PAIR_AB_REHEARSAL_RESULTS_EN.md) | [`中文`](manuscript/simulation/PAIR_AB_REHEARSAL_RESULTS_ZH.md)
 
 ### Paper 2 — C
 **Psychosis-specific response-policy calibration under minimal clinical contrasts**
@@ -48,6 +49,17 @@ Under [`ASSUMPTION_MODE_2026-10-03.md`](ASSUMPTION_MODE_2026-10-03.md), clinical
 - English master: [`manuscript/PAIR_C_MASTER_v2_EN.md`](manuscript/PAIR_C_MASTER_v2_EN.md)
 - 中文主稿: [`manuscript/PAIR_C_MASTER_v2_ZH.md`](manuscript/PAIR_C_MASTER_v2_ZH.md)
 - Reviewer #2 audit: [`manuscript/REVIEWER2_C_v1.md`](manuscript/REVIEWER2_C_v1.md)
+- Simulation-results rehearsal: [`English`](manuscript/simulation/PAIR_C_REHEARSAL_RESULTS_EN.md) | [`中文`](manuscript/simulation/PAIR_C_REHEARSAL_RESULTS_ZH.md)
+
+## Publication analysis
+
+The manuscript-facing analysis layer is in [`analysis/publication/`](analysis/publication/):
+- `plan_a_primary_clmm.R` — cumulative-link mixed model for the real Plan-A primary analysis;
+- `plan_bc_family_aware_analysis.py` — item-first / family-aware calibration analysis for B/C;
+- `make_publication_figures.py` — figure generation from frozen analysis tables;
+- `REAL_DATA_CONTRACT.md` — required real-data columns and merge contracts.
+
+A synthetic rehearsal has already been run to test the figure/manuscript pipeline. Existing synthetic numbers and dry-run figures are **not empirical results**.
 
 ## Frozen/candidate research assets
 
@@ -72,9 +84,13 @@ Under [`ASSUMPTION_MODE_2026-10-03.md`](ASSUMPTION_MODE_2026-10-03.md), clinical
 
 ## HTML / GitHub Pages
 
-The bilingual dashboard source is [`docs/index.html`](docs/index.html). GitHub Pages is now enabled for this repository (`has_pages: true` at the latest repository check), and the dashboard is maintained as the bilingual public entry point.
+GitHub Pages is enabled for this repository.
 
-The Page must expose both English and Chinese README, Paper 1, Paper 2, and research-state entry points. The PAIR-C clinician review HTML is also maintained bilingually.
+- [`docs/index.html`](docs/index.html) is intentionally a **paper-like discussion handbook** for supervisors/students, using the earlier non-dashboard visual language.
+- [`docs/dashboard.html`](docs/dashboard.html) preserves the compact technical navigation/index view.
+- [`docs/PAIR_C_CLINICIAN_REVIEW.html`](docs/PAIR_C_CLINICIAN_REVIEW.html) is the bilingual clinician-review tool.
+
+The Page must expose both English and Chinese README, papers, study state and discussion material.
 
 ## Preregistration / ethics
 
@@ -135,6 +151,6 @@ The project is no longer blocked by missing design work. It is blocked only by r
 5. supply API credentials/workspace config for C smoke/full pilot;
 6. obtain real clinician ratings/sign-off if making clinician-validation claims;
 7. run frozen analysis on real data;
-8. final CHART / Reviewer-2 / literature-refresh checks.
+8. regenerate empirical tables/figures, rewrite Results/Discussion, then run final CHART / Reviewer-2 / literature-refresh checks.
 
 There are currently **no real model-performance results** in this repository; existing synthetic/dry-run artifacts are software, structure, analysis, and manuscript rehearsal only.
