@@ -4,7 +4,7 @@
 
 ## Overall
 
-🟢 **Design/engineering preparation is complete, the end-to-end synthetic smoke pipeline has passed, both manuscript tracks have completed a pre-data Reviewer #2 stress test, and the public publication/meeting layer is now bilingual and meeting-complete. Under user-authorized Assumption Mode, A/B/C remain at real-data execution readiness.**
+🟢 **Design/engineering preparation is complete, the end-to-end synthetic smoke pipeline has passed, both manuscript tracks have completed a pre-data Reviewer #2 stress test, and the public meeting layer is now bilingual and public-discussion ready. Under user-authorized Assumption Mode, A/B/C remain at real-data execution readiness.**
 
 Operational framing:
 
@@ -41,35 +41,20 @@ See `ASSUMPTION_MODE_2026-10-03.md` for the evidence boundary: workflow may proc
 - [x] `docs/papers.html` embeds both manuscript tracks with English/中文 switching and conversation exemplars
 - [x] `docs/PAIR_C_CLINICIAN_REVIEW.html` is a bilingual clinician-review tool aligned with `[L,U]`, `target_direction`, and `clinically_relevant_change`
 - [x] technical index retained separately as `docs/dashboard.html`
-- [x] **`docs/index.html` upgraded to v10 as the formal meeting interface**, preserving paper-like discussion-handbook styling rather than AI/dashboard styling
+- [x] **`docs/index.html` upgraded to v11 as the formal public research-group discussion interface**
 
-### v10 meeting-page narrative is now complete
+### v11 meeting-page refinement
 
-The GitHub Pages main interface now explicitly covers:
-1. why the meeting is happening;
-2. the original student protocol;
-3. the strongest defense of what already works;
-4. reviewer-level hard problems;
-5. concrete before/after case improvement and minimal-pair logic;
-6. APP vs API interpretation boundaries;
-7. literature/novelty positioning;
-8. how to persuade without replacing the original contribution;
-9. A/B/C evolution and the final two-paper split;
-10. completed assets and actual workload;
-11. what clinicians need to review/rate;
-12. the raw-response → rating → analysis → estimate → figure pipeline;
-13. synthetic figures and conversation exemplars;
-14. embedded bilingual full papers;
-15. what kinds of results remain scientifically publishable, including null/heterogeneous patterns;
-16. an interactive browser-persistent meeting decision board plus Parking Lot.
+The main Page has been revised in response to three presentation issues: excessive English in the Chinese discussion text, excessive internal/meta information, and insufficient scientific detail in several high-value sections.
 
-The page uses explicit evidence-state labels:
-- `FROZEN / PROVISIONAL DESIGN`
-- `ENGINEERING DEFAULT`
-- `SYNTHETIC REHEARSAL`
-- `REAL EMPIRICAL`
+v11 therefore:
+- uses natural Chinese as the default discussion language, with English retained mainly for proper nouns, first-use terminology, API, and metric abbreviations;
+- removes public-facing meta language such as “how to persuade,” “how to open the meeting,” Agent/Git maintenance reminders, and user-specific operating notes;
+- expands the scientific content on case refinement, consumer-product vs fixed-API interpretation, clinician tasks, metric interpretation, evidence boundaries, and the two-paper design;
+- keeps the paper-like discussion-handbook visual style rather than returning to a dashboard aesthetic;
+- preserves the bilingual paper embeds, clinician-review link, simulated figures, conversation examples, and browser-persistent decision board.
 
-Meeting narrative rules are frozen in `MEETING_GUIDE.md` so later agents must not collapse the page back into a final-answer-only dashboard.
+Public discussion-page rules are frozen in `MEETING_GUIDE.md` so later iterations should distinguish **public research discussion content** from **internal project-management/meta content**.
 
 Public-facing README, current paper masters, HTML and Pages must remain synchronized across languages.
 
@@ -159,7 +144,7 @@ Current prompt banks use **fictional/synthetic research prompts**, not raw patie
 
 ## Immediate next empirical step
 
-Use the v10 meeting Page to finalize team decisions, then run the real technical smoke pilot with frozen prompts/settings:
+Use the v11 meeting Page to finalize team decisions, then run the real technical smoke pilot with frozen prompts/settings:
 - A: 100 real APP smoke outputs
 - B: 36 real APP smoke outputs
 - C: 48 real API smoke outputs after real clinician review fields are completed/frozen
