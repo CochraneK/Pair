@@ -1,10 +1,10 @@
 # STATUS
 
-**Updated:** 2026-10-03
+**Updated:** 2026-10-04
 
 ## Overall
 
-🟢 **Design/engineering preparation is complete, the end-to-end synthetic smoke pipeline has passed, both manuscript tracks have completed a pre-data Reviewer #2 stress test, and the public publication layer is now bilingual. Under user-authorized Assumption Mode, A/B/C are at real-data execution readiness.**
+🟢 **Design/engineering preparation is complete, the end-to-end synthetic smoke pipeline has passed, both manuscript tracks have completed a pre-data Reviewer #2 stress test, and the public publication/meeting layer is now bilingual and meeting-complete. Under user-authorized Assumption Mode, A/B/C remain at real-data execution readiness.**
 
 Operational framing:
 
@@ -25,9 +25,11 @@ See `ASSUMPTION_MODE_2026-10-03.md` for the evidence boundary: workflow may proc
 - [x] blinded rater manual candidate
 - [x] deterministic collection schedules
 - [x] Plan A CLMM analysis script
-- [x] **end-to-end synthetic smoke run passed: 184 outputs**
+- [x] end-to-end synthetic smoke run passed: 184 outputs
+- [x] publication-oriented synthetic analysis/figure rehearsal pipeline
+- [x] conversation-exemplar reporting rule and bilingual exemplar modules
 
-## Bilingual public layer
+## Bilingual public / meeting layer
 
 - [x] English README: `README.md`
 - [x] Chinese README: `README.zh-CN.md`
@@ -35,10 +37,39 @@ See `ASSUMPTION_MODE_2026-10-03.md` for the evidence boundary: workflow may proc
 - [x] A+B Master v4 available in English + Simplified Chinese
 - [x] PAIR-C Master v2 available in English + Simplified Chinese
 - [x] bilingual manuscript-state page
-- [x] bilingual `docs/index.html` dashboard with English/中文 switch
-- [x] PAIR-C clinician review HTML rebuilt as a valid bilingual tool
-- [x] clinician review HTML aligned with revised C schema: `[L,U]`, `target_direction`, `clinically_relevant_change`
-- [x] GitHub Pages enabled (`has_pages: true` at latest repository check)
+- [x] GitHub Pages enabled
+- [x] `docs/papers.html` embeds both manuscript tracks with English/中文 switching and conversation exemplars
+- [x] `docs/PAIR_C_CLINICIAN_REVIEW.html` is a bilingual clinician-review tool aligned with `[L,U]`, `target_direction`, and `clinically_relevant_change`
+- [x] technical index retained separately as `docs/dashboard.html`
+- [x] **`docs/index.html` upgraded to v10 as the formal meeting interface**, preserving paper-like discussion-handbook styling rather than AI/dashboard styling
+
+### v10 meeting-page narrative is now complete
+
+The GitHub Pages main interface now explicitly covers:
+1. why the meeting is happening;
+2. the original student protocol;
+3. the strongest defense of what already works;
+4. reviewer-level hard problems;
+5. concrete before/after case improvement and minimal-pair logic;
+6. APP vs API interpretation boundaries;
+7. literature/novelty positioning;
+8. how to persuade without replacing the original contribution;
+9. A/B/C evolution and the final two-paper split;
+10. completed assets and actual workload;
+11. what clinicians need to review/rate;
+12. the raw-response → rating → analysis → estimate → figure pipeline;
+13. synthetic figures and conversation exemplars;
+14. embedded bilingual full papers;
+15. what kinds of results remain scientifically publishable, including null/heterogeneous patterns;
+16. an interactive browser-persistent meeting decision board plus Parking Lot.
+
+The page uses explicit evidence-state labels:
+- `FROZEN / PROVISIONAL DESIGN`
+- `ENGINEERING DEFAULT`
+- `SYNTHETIC REHEARSAL`
+- `REAL EMPIRICAL`
+
+Meeting narrative rules are frozen in `MEETING_GUIDE.md` so later agents must not collapse the page back into a final-answer-only dashboard.
 
 Public-facing README, current paper masters, HTML and Pages must remain synchronized across languages.
 
@@ -50,32 +81,28 @@ Public-facing README, current paper masters, HTML and Pages must remain synchron
 - [x] canonical Chinese master: `manuscript/PAIR_AB_MASTER_v4_ZH.md`
 - [x] literature and clinical-theory narrative rebuilt
 - [x] CHART map + real-data swap map created
-- [x] pre-data Reviewer #2 stress test completed: `manuscript/REVIEWER2_AB_v1.md`
-- [x] reviewer corrections frozen in manuscript logic as **A+B v4**: `manuscript/V4_STATUS.md`
+- [x] pre-data Reviewer #2 stress test completed
 - [x] prompt-condition blinding overclaim removed; only product identity is a valid blind
 - [x] P5 disorganized-communication exclusion sensitivity analysis added
 - [x] product sampling-frame / version-break / brand-leakage rules added
 - [x] Aim 2 retained as exploratory because six scenario families are the clinical replication units
+- [x] manuscript requires representative dialogue examples under a frozen anti-cherry-picking selection rule
 
 ### Paper 2 — C
 - [x] full companion manuscript master created
 - [x] canonical English master: `manuscript/PAIR_C_MASTER_v2_EN.md`
 - [x] canonical Chinese master: `manuscript/PAIR_C_MASTER_v2_ZH.md`
-- [x] pre-data Reviewer #2 stress test completed: `manuscript/REVIEWER2_C_v1.md`
-- [x] reviewer corrections frozen as **PAIR-C v2**: `manuscript/PAIR_C_V2_STATUS.md`
-- [x] framing narrowed from exact “boundary location” to **response-policy calibration under minimal clinical contrasts**
+- [x] pre-data Reviewer #2 stress test completed
+- [x] framing narrowed from exact “boundary location” to response-policy calibration under minimal clinical contrasts
 - [x] 0–5 policy scale explicitly treated as ordinal escalation intensity
 - [x] URS/ORS treated as ordinal step distances, not interval-scale clinical severity
-- [x] CDC now requires direct clinician pair-level `target_direction ∈ {-1,0,+1}` rather than `[L,U]` midpoint arithmetic
+- [x] CDC requires direct clinician pair-level `target_direction ∈ {-1,0,+1}` rather than `[L,U]` midpoint arithmetic
 - [x] CCA explicitly separated from total clinical appropriateness
 - [x] ground-truth panel vs response-rating panel separation/freeze rule added
 - [x] generic “response policy” removed as a novelty claim
 - [x] benchmark-release contamination risk documented
-- [x] nuisance invariance remains **not estimated** in the current 64-item pilot
-
-Combined readiness matrix: `manuscript/SUBMISSION_READINESS_AFTER_R2.md`.
-
-Formatted local DOCX masters have been rendered and visually QA-checked page-by-page. They are **not submission-ready until all highlighted real-world placeholders are resolved**.
+- [x] nuisance invariance remains not estimated in the current 64-item pilot
+- [x] manuscript requires at least one interpretable minimal-pair dialogue exemplar selected under a frozen rule
 
 ## Plan A — real collection-ready candidate
 
@@ -84,24 +111,24 @@ Formatted local DOCX masters have been rendered and visually QA-checked page-by-
 - [x] frozen as `A-v0.1-provisional`
 - [x] 5-product consumer APP set
 - [x] stratified 16-item psychosis stability subset
-- [x] collection design: **960 outputs**
+- [x] collection design: 960 outputs
 - [x] preregistration draft + confirmatory analysis script
-- [x] synthetic engineering smoke for 100-output subset passed
+- [x] synthetic engineering smoke passed
 
 ## Plan B — real pilot-ready candidate
 
 - [x] 6 families × 3 axes × 2 levels = 36 prompts
 - [x] 18 minimal pairs
 - [x] frozen as `B-v0.1-provisional`
-- [x] 3 APP products × 3 runs/item = **324 outputs**
+- [x] 3 APP products × 3 runs/item = 324 outputs
 - [x] boundary/calibration metrics ready
-- [x] synthetic engineering smoke for 36-output subset passed
+- [x] synthetic engineering smoke passed
 
 ## Plan C — real API pilot-ready candidate
 
 - [x] 64 prompts = 8 families × 4 axes × 2 levels
 - [x] fixed API candidate configurations + runner
-- [x] planned **576 outputs**
+- [x] planned 576 outputs
 - [x] evidence/plausibility corrected as a clinically relevant axis, not nuisance
 - [x] positive and negative target directions supported
 - [x] NI explicitly `NA` until a true nuisance module is frozen
@@ -128,11 +155,13 @@ Canonical details: `execution/EXECUTION_PLAN_v0.1.md`.
 
 There are currently **no real model-performance results**. Synthetic/mock and realistic-simulation data are engineering/manuscript rehearsal only and must never be reported as empirical findings.
 
-## Immediate next step
+Current prompt banks use **fictional/synthetic research prompts**, not raw patient clinical records.
 
-Run the **real technical smoke pilot** with frozen prompts/settings, then full collection if authentication/UI/quota/API checks pass:
+## Immediate next empirical step
+
+Use the v10 meeting Page to finalize team decisions, then run the real technical smoke pilot with frozen prompts/settings:
 - A: 100 real APP smoke outputs
 - B: 36 real APP smoke outputs
 - C: 48 real API smoke outputs after real clinician review fields are completed/frozen
 
-After real data: frozen statistics → empirical tables/figures → populate Results/Discussion → **Reviewer #2 rerun** → final CHART/Nature Portfolio reporting audit → submission.
+After real data: frozen statistics → empirical tables/figures → populate Results/Discussion → Reviewer #2 rerun → final CHART/Nature Portfolio reporting audit → submission.
