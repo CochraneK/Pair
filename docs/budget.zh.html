@@ -1,0 +1,57 @@
+<h3>进度周期与成本预算：从“设计已准备”走到“可投稿”大约需要多少时间和钱？</h3>
+<p>下面的预算按当前 A+B+C 规模估算：A 960 条回应、B 324 条、C 576 条，共 1,860 条。这里最主要的成本不是模型调用，而是<b>临床专家时间、人工采集、评分、质检和写作</b>。金额是项目规划假设，不代表任何单位的正式劳务标准。</p>
+
+<h4>推荐进度：10–12 周完成真实数据到首轮投稿稿</h4>
+<table>
+<tr><th>阶段</th><th>建议时间</th><th>主要工作</th><th>关键产出</th></tr>
+<tr><td>1. 最终冻结</td><td>第 1 周</td><td>冻结 A/B/C 题目、B/C 系统选择规则、采集 SOP、主要统计方案、伦理/预注册材料</td><td>可正式执行的 protocol + SAP + freeze package</td></tr>
+<tr><td>2. 医生审题与评分校准</td><td>第 2–3 周</td><td>A 配对有效性；B/C manipulation、[L,U]、target direction、禁忌行为；评分者 calibration</td><td>临床 ground truth 与修订后题库</td></tr>
+<tr><td>3. 技术小样本 + 正式采集</td><td>第 3–6 周</td><td>先跑真实 smoke test，再采集 A/B 消费产品与 C 固定 API；记录版本、时间、错误和 fallback</td><td>1,860 条真实回应及原始记录</td></tr>
+<tr><td>4. 双评分与裁决</td><td>第 4–8 周</td><td>两名评分者盲于产品身份独立评分；抽查一致性；按预设规则裁决</td><td>raw ratings + adjudicated dataset</td></tr>
+<tr><td>5. 数据锁定与统计</td><td>第 8–10 周</td><td>QA、缺失/异常检查、A 主模型、B/C family-aware 分析、全部图表</td><td>locked dataset + tables + figures</td></tr>
+<tr><td>6. 论文与内部审阅</td><td>第 10–12 周</td><td>用真实结果替换占位，补结果/讨论/局限，核对 CHART/声明/附件</td><td>Paper 1 可投稿稿；PAIR-C pilot 稿</td></tr>
+</table>
+
+<div class="cols">
+<div class="card"><h4>最快：6–8 周</h4><p>前提是题目几乎不再大改、两名医生每周都能稳定投入、消费产品无明显限额/版本中断、采集与评分并行。适合“先把第一篇尽快投出去”。</p></div>
+<div class="card"><h4>推荐：10–12 周</h4><p>给医生修题、评分一致性、产品版本变化和统计复核留出余量。这个周期更适合作为项目计划。</p></div>
+<div class="card"><h4>保守：14–18 周</h4><p>如果医生时间碎片化、产品频繁升级、题库需要二次临床修订，或两篇论文都要求在同一轮完成，按这个区间更稳妥。</p></div>
+</div>
+
+<h4>人时估算</h4>
+<table>
+<tr><th>工作</th><th>估计工作量</th><th>说明</th></tr>
+<tr><td>临床题目审核 / ground truth</td><td>约 24–30 临床专家小时</td><td>按 2 名专家，每人约 12–15 小时，包括 A 80 对、B 18 对、C 32 对和 calibration</td></tr>
+<tr><td>模型回应评分 + 裁决</td><td>约 80–110 临床专家小时</td><td>两名评分者评价 A/B/C；按每条约 1–1.5 分钟并加一致性检查、疑难项和裁决</td></tr>
+<tr><td>临床专家总投入</td><td><b>约 105–140 小时</b></td><td>如果 ground-truth panel 与 response raters 完全分开，取上限甚至更高</td></tr>
+<tr><td>采集 / 数据工程 / QA</td><td>约 55–85 小时</td><td>A/B 消费产品手工新会话、截图/日志；C API 自动采集；数据清洗和版本核对</td></tr>
+<tr><td>统计 / 图表 / 论文</td><td>约 35–60 小时</td><td>冻结脚本、主分析、敏感性分析、真实图表、结果与讨论更新</td></tr>
+<tr><td>项目运营非临床总投入</td><td><b>约 100–150 小时</b></td><td>如果由现有科研助理承担，这部分可能不是新增现金支出，但仍是机会成本</td></tr>
+</table>
+
+<h4>研究执行现金预算（不含 APC）</h4>
+<p class="small">推荐规划假设：临床专家劳务按 ¥300/小时作预算占位；采集/数据/统计运营按 ¥80/小时估算。实际支付必须服从单位规定、合作方式和是否作为共同作者参与。</p>
+<table>
+<tr><th>项目</th><th>低现金成本情形</th><th>推荐预算</th><th>外部专家/保守预算</th></tr>
+<tr><td>临床专家时间</td><td>¥0–15,000<br><span class="small">团队内部合作、无单独劳务或较低补贴</span></td><td>约 ¥32,000–42,000</td><td>约 ¥55,000–80,000</td></tr>
+<tr><td>科研助理 / 采集 / 数据 / 统计</td><td>¥0–3,000<br><span class="small">已有岗位吸收大部分工时</span></td><td>约 ¥8,000–12,000</td><td>约 ¥12,000–20,000</td></tr>
+<tr><td>消费产品会员 / 账号</td><td>¥0–500</td><td>¥500–1,500</td><td>¥1,500–3,000</td></tr>
+<tr><td>API 调用与重试</td><td>通常 < ¥100</td><td>预留 ¥100–500</td><td>预留 ¥500–1,500</td></tr>
+<tr><td>存储、备份、杂项</td><td>¥0–500</td><td>¥500–1,500</td><td>¥1,000–3,000</td></tr>
+<tr><td><b>研究执行合计</b></td><td><b>约 ¥1,000–20,000</b></td><td><b>约 ¥40,000–55,000</b></td><td><b>约 ¥70,000–105,000</b></td></tr>
+</table>
+
+<div class="note blue"><b>最值得注意：</b>如果医生和科研助理都是现有合作团队成员，不单独支付劳务，真实“现金支出”可能只有账号/API/杂项的几千元；但项目仍然消耗约 200–290 人时。反过来，如果医生按外部专家标准付费，临床时间会成为绝对主成本。</div>
+
+<h4>投稿/出版成本：必须和研究执行预算分开</h4>
+<table>
+<tr><th>目标期刊</th><th>当前官方 APC / APF</th><th>备注</th></tr>
+<tr><td>npj Digital Medicine</td><td><b>Original Research：US$4,290 / £3,090 / €3,390</b></td><td>按接收日期确定费用；可能存在机构开放获取协议或个案减免。<a href="https://www.nature.com/npjdigitalmed/open-access" target="_blank">官方页面</a></td></tr>
+<tr><td>JMIR Mental Health</td><td><b>US$3,150</b></td><td>接收后收取；部分机构会员/支持政策可能覆盖或减免。<a href="https://mental.jmir.org/about-journal/article-processing-fees" target="_blank">官方页面</a></td></tr>
+</table>
+<p>因此，如果单位不能覆盖 APC，<b>出版费可能比模型、会员和服务器的全部费用加起来还高</b>。建议在投稿前先查医院/高校是否有 Springer Nature 或 JMIR 的开放获取协议、科研经费或出版费报销渠道。</p>
+
+<h4>如果 C pilot 成功，扩展到正式 PAIR Benchmark v1</h4>
+<p>当前 C 的 8 families × 4 axes × 2 levels 是 benchmark-development pilot。若 pilot 通过，扩展到约 20 families、更多有序水平、nuisance-invariance 和正式 release 文档，建议再预留 <b>12–24 周</b>。如果继续采用双临床审核和双评分，新增执行预算可再按 <b>约 ¥30,000–80,000</b> 量级准备；具体数字应等 pilot 后根据保留的轴、水平和模型数重新计算，而不是现在一次性锁死。</p>
+
+<div class="note amber"><b>项目管理建议：</b>先把“第一篇可投稿”设为 10–12 周里程碑；PAIR-C pilot 可以并行，但正式 benchmark v1 不应成为第一篇投稿的前置条件。这样既保留 benchmark 的长期价值，也不会让原项目被无限扩张拖住。</div>
