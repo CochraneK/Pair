@@ -1,0 +1,32 @@
+<h3>The original protocol's key reference remains highly relevant, but the 2026 literature has moved quickly.</h3>
+<h4>Key reference: Shen et al., JAMA Psychiatry, 2026</h4>
+<p>Shen and colleagues tested 79 psychosis-related prompts and 79 matched controls across three ChatGPT product versions, with clinician-rated 0–2 appropriateness and proportional-odds analyses. This provides a clear backbone for the original PAIR protocol.<sup><a href="https://doi.org/10.1001/jamapsychiatry.2026.0249" target="_blank">[1]</a></sup></p>
+<div class="cols">
+  <div class="card"><h4>Why it is a strong reference</h4><ul>
+    <li>Matched psychosis/control design rather than a simple model leaderboard.</li><li>Clinician evaluation rather than purely automated judging.</li><li>Ordinal appropriateness outcome with interpretable effect estimates.</li><li>SIPS P1–P5 structure for prompt coverage.</li>
+  </ul></div>
+  <div class="card"><h4>Limitations acknowledged by the authors</h4><ul>
+    <li>Only ChatGPT was tested.</li><li>The rating system remained inherently subjective.</li><li>Recognition, non-reinforcement, urgency, and resources were not separately analyzed as primary components.</li><li>Each prompt was tested only once per version despite model nondeterminism.</li><li>The study used single-turn rather than extended conversations.</li><li>Rapid product evolution limits the durability of point-in-time findings.</li>
+  </ul></div>
+</div>
+<p>PAIR should therefore not be framed as merely a Chinese replication. In addition to addressing several limitations above, it introduces pair-level confound auditing so that psychosis-related content is not inadvertently changed together with financial risk, action urgency, evidence strength, or other clinically important variables.</p>
+<h4>Representative work that already occupies nearby territory</h4>
+<table>
+<tr><th>Work</th><th>What it already contributes</th><th>Implication for PAIR</th></tr>
+<tr><td>PsychiatryBench, npj Digital Medicine 2026 <sup><a href="https://doi.org/10.1038/s41746-026-02582-w" target="_blank">[2]</a></sup></td><td>Large multi-task psychiatry benchmark with thousands of expert-validated items.</td><td>PAIR should not claim novelty from being a broad psychiatry benchmark.</td></tr>
+<tr><td>SIM-VAIL, Nature Medicine 2026 <sup><a href="https://doi.org/10.1038/s41591-026-04577-2" target="_blank">[3]</a></sup></td><td>Clinically validated multi-turn auditing across 30 vulnerability–intent profiles, 9 chatbots, and 13 mental-health risk dimensions.</td><td>Multi-turn mental-health auditing is already a substantial contribution; PAIR should emphasize controlled psychosis-specific contrasts.</td></tr>
+<tr><td>LLM Spirals of Delusion, 2026 <sup><a href="https://arxiv.org/abs/2604.06188" target="_blank">[4]</a></sup></td><td>Directly compares API and user-facing chat interfaces, tracks 20-turn dynamics, and documents temporal model drift.</td><td>API-vs-interface and drift are important controls, not unique PAIR claims.</td></tr>
+<tr><td>When Chatbots Accommodate, 2026 <sup><a href="https://arxiv.org/abs/2606.04431" target="_blank">[5]</a></sup></td><td>Infers response policies from roughly 47–48k real-world vulnerable-conversation turns.</td><td>"Response policy" itself is not novel; PAIR-C needs a narrower psychosis-specific calibration signature.</td></tr>
+<tr><td>ClinDet-Bench, ACL 2026 <sup><a href="https://doi.org/10.18653/v1/2026.acl-industry.47" target="_blank">[6]</a></sup></td><td>Evaluates whether models recognize when clinical information is insufficient for a determinate decision.</td><td>Uncertainty and determinability must be treated as capabilities, not as failure to give a strong answer.</td></tr>
+<tr><td>K-Bench, 2026 <sup><a href="https://arxiv.org/abs/2609.15855" target="_blank">[7]</a></sup></td><td>Clinician-calibrated, protected multi-turn benchmark across 200 vignettes and 125 model configurations.</td><td>Broad clinician-calibrated mental-health benchmarking is no longer an open niche.</td></tr>
+</table>
+<div class="note green"><b>Current defensible PAIR-C signature:</b> psychosis-specific scenarios, one-clinical-cue-at-a-time minimal contrasts, clinician-defined acceptable response-policy intervals, directly annotated target direction, and symmetric measurement of under-response and over-response. Our targeted search has not identified the same combination, but the manuscript should avoid "world-first" language.</div>
+<details><summary>Meeting references</summary><ol>
+<li>Shen E, Hamati F, Donohue MR, et al. JAMA Psychiatry. 2026;83(6):655–657. doi:10.1001/jamapsychiatry.2026.0249.</li>
+<li>Fouda AE, Hassan AA, Hanafy RJ, et al. npj Digital Medicine. 2026;9:320. doi:10.1038/s41746-026-02582-w.</li>
+<li>Weilnhammer V, Hou KYC, Luettgau L, et al. Nature Medicine. 2026. doi:10.1038/s41591-026-04577-2.</li>
+<li>Kirgis P, Hawriluk B, Feng S, et al. arXiv:2604.06188. 2026.</li>
+<li>Chu MD, Wu Y, Chen Z, Hwang AHC, Luceri L. arXiv:2606.04431. 2026.</li>
+<li>Watanabe Y, Kobashi Y, Kojima T, et al. ACL Industry Track. 2026:681–703. doi:10.18653/v1/2026.acl-industry.47.</li>
+<li>Vowels LM, Vowels MJ, Sharma S, et al. arXiv:2609.15855. 2026.</li>
+</ol><p class="small">Literature status checked 5 October 2026. Preprints and version metadata should be re-checked at submission.</p></details>
