@@ -15,30 +15,35 @@ function applyLabels(){
  document.getElementById('print').textContent=lang==='zh'?'打印':'Print';
  document.documentElement.lang=lang==='zh'?'zh-CN':'en';
 }
-async function injectFragment(sectionId, file){
- try{
-   const r=await fetch(file,{cache:'no-store'});
-   if(!r.ok)return;
-   const fragment=await r.text();
-   const doc=frame.contentDocument;
-   const sec=doc&&doc.getElementById(sectionId);
-   const box=sec&&sec.querySelector('.content');
-   if(box)box.innerHTML=fragment;
- }catch(e){}
+async function injectFragment(sectionId,file){
+ try{const r=await fetch(file,{cache:'no-store'});if(!r.ok)return;const fragment=await r.text();const doc=frame.contentDocument;const sec=doc&&doc.getElementById(sectionId);const box=sec&&sec.querySelector('.content');if(box)box.innerHTML=fragment;}catch(e){}
 }
-async function injectSections(){
+function applyBenchmarkFraming(){
+ const doc=frame.contentDocument;if(!doc)return;
+ const h1=doc.querySelector('.mast h1'),lede=doc.querySelector('.lede'),meta=doc.querySelector('.meta');
+ const sec=doc.getElementById(lang==='zh'?'zh6':'en6');
+ const sideTitle=sec&&sec.querySelector('.side h2');
+ const toc=[...doc.querySelectorAll('.toc a')].find(a=>a.getAttribute('href')===(lang==='zh'?'#zh6':'#en6'));
+ if(lang==='zh'){
+  if(h1)h1.textContent='从原始研究方案到 PAIR Benchmark：研究设计、临床审核与验证论文';
+  if(lede)lede.textContent='本页用于研究组讨论。长期目标是构建一套可复用、可版本化、可跨模型复测的精神病性回应 Benchmark；A、B、C 是从现实世界审计到可控临床对照、再到 benchmark development 的递进阶段，两篇论文是第一阶段验证产出。';
+  if(meta)meta.innerHTML='<b>长期主线：</b>PAIR Benchmark<br><b>第一篇：</b>A+B 消费产品审计 + 探索性临床对照<br><b>第二篇：</b>PAIR-C Benchmark development pilot<br><b>当前阶段：</b>真实数据采集前<br><b>计划输出：</b>1,860 条模型/产品回应<br><b>数据状态：</b>当前图表均为模拟演练，不代表真实产品表现';
+  if(sideTitle)sideTitle.innerHTML='<span class="num">06</span>PAIR Benchmark 与 A/B/C';if(toc)toc.textContent='06 PAIR Benchmark 与 A/B/C';
+ }else{
+  if(h1)h1.textContent='From the original protocol to the PAIR Benchmark';
+  if(lede)lede.textContent='This page supports research-group discussion. The long-term goal is a reusable, versioned benchmark for psychosis-related AI responses. A, B, and C progress from real-world auditing to controlled clinical contrasts and benchmark development; the two manuscripts are the first validation outputs.';
+  if(meta)meta.innerHTML='<b>Long-term core:</b> PAIR Benchmark<br><b>Paper 1:</b> A+B consumer-product audit + exploratory clinical contrasts<br><b>Paper 2:</b> PAIR-C benchmark-development pilot<br><b>Stage:</b> before empirical collection<br><b>Planned outputs:</b> 1,860<br><b>Evidence:</b> current figures are simulation rehearsal only';
+  if(sideTitle)sideTitle.innerHTML='<span class="num">06</span>PAIR Benchmark and A/B/C';if(toc)toc.textContent='06 PAIR Benchmark and A/B/C';
+ }
+}
+async function hydrate(){
+ applyBenchmarkFraming();
  await Promise.all([
-   injectFragment(lang==='zh'?'zh5':'en5', lang==='zh'?'literature.zh.html':'literature.en.html'),
-   injectFragment(lang==='zh'?'zh6':'en6', lang==='zh'?'design-rationale.zh.html':'design-rationale.en.html')
+  injectFragment(lang==='zh'?'zh5':'en5',lang==='zh'?'literature.zh.html':'literature.en.html'),
+  injectFragment(lang==='zh'?'zh6':'en6',lang==='zh'?'benchmark.zh.html':'benchmark.en.html')
  ]);
 }
-function applyLang(){
- applyLabels();
- localStorage.setItem('pair-page-lang',lang);
- const wanted=lang==='zh'?'index.zh.html':'index.en.html';
- if(!frame.src.endsWith(wanted)) frame.src=wanted; else injectSections();
-}
+function applyLang(){applyLabels();localStorage.setItem('pair-page-lang',lang);const wanted=lang==='zh'?'index.zh.html':'index.en.html';if(!frame.src.endsWith(wanted))frame.src=wanted;else hydrate();}
 function toggleLang(){lang=lang==='zh'?'en':'zh';applyLang()}
-frame.addEventListener('load',injectSections);
-applyLang();
+frame.addEventListener('load',hydrate);applyLang();
 </script></body></html>
