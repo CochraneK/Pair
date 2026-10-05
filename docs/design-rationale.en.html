@@ -1,37 +1,56 @@
-<h3>A, B, and C are not three parallel alternatives; they form a progression from detecting a phenomenon to measuring the mechanism.</h3>
-<div class="flow"><div class="step"><b>A: Is there a difference?</b><br>Are psychosis-related prompts more likely than matched controls to elicit inappropriate responses?</div><div class="step"><b>B: Does the response move with clinical information?</b><br>Within the same scenario, change one clinically meaningful cue and test whether policy shifts in the right direction.</div><div class="step"><b>C: Can this become an independent calibration framework?</b><br>Develop minimal clinical contrasts into a reproducible pilot benchmark that can diagnose specific failure modes.</div></div>
+<h3>PAIR is not three competing plans; it is a benchmark-development program with staged validation.</h3>
+<p>The clearest framing is that <b>PAIR Benchmark is the primary project, while A/B/C are validation stages with increasing measurement ambition</b>. The papers are early scholarly outputs of that benchmark-building process, not the reason the benchmark exists.</p>
+<div class="flow"><div class="step"><b>A: Real-world baseline</b><br>Test whether psychosis-related content is more likely to elicit inappropriate responses in consumer products</div><div class="step"><b>B: Controlled measurement bridge</b><br>Turn cases into scenario family × clinical axis × minimal contrast</div><div class="step"><b>C: Benchmark development</b><br>Systematically measure whether models adjust response policy correctly and proportionately when clinical information changes</div></div>
+<div class="pull">In one sentence: <b>A asks whether the problem exists; B turns the problem into controlled measurement units; C develops those units into a reusable PAIR Benchmark.</b></div>
 
-<h4>A: Cleanly answer the original question first</h4>
-<p>A has no clinical “axes.” Its main contrast is simply <b>psychosis-related versus strictly matched nonpsychotic content</b>. The 80 pairs largely inherit the original protocol and remain balanced across SIPS P1–P5 at 16 pairs per domain. Thus, 80 is mainly a design-continuity and domain-balance choice rather than a newly power-optimized unique optimum.</p>
-<p>Approximately five consumer products provide broader real-world product coverage while keeping collection and clinician-rating workload feasible. The final product list must be frozen before outcomes are known; it is not a probability sample of all Chinese models.</p>
-<div class="note blue"><b>Priority in A:</b> prompt coverage and match quality matter more than indefinitely increasing the number of products.</div>
+<h4>A: the real-world baseline layer</h4>
+<p>A has no clinical axes. Its main contrast remains <b>psychosis-related versus strictly matched nonpsychotic content</b>. The 80 pairs largely inherit the original protocol and remain balanced across SIPS P1–P5 at 16 pairs per domain, for 160 prompts total. This is mainly a continuity-and-domain-balance choice, not a uniquely optimal number derived from a new power calculation.</p>
+<p>Approximately five consumer products provide useful market-facing coverage without making manual collection and clinician rating unmanageable. The final list must be frozen prospectively.</p>
+<div class="note blue"><b>Benchmark value of A:</b> ecological validity. It tells us whether the phenomenon appears in the actual products users encounter, how large it is, and how stable it is.</div>
 
-<h4>B: Add a bounded mechanism bridge inside Paper 1</h4>
-<p>B keeps A intact and asks whether response policy changes when one clinically important cue changes within the same psychosis-relevant scenario.</p>
-<p>The first pilot uses only three axes because they have relatively clear clinical meaning and expected directional consequences while keeping the extension bounded:</p>
+<h4>B: from a case bank toward a measurement instrument</h4>
+<p>B is the first stage that introduces the core benchmark structure:</p>
+<p><b>scenario family × clinical axis × minimal contrast</b></p>
+<p>Instead of merely asking whether a single vignette was answered well, B deliberately controls one clinically meaningful variable and tests whether the model changes its response accordingly.</p>
+<p>The first pilot uses only three axes to keep the clinical direction interpretable and the extension bounded:</p>
 <table><tr><th>Axis</th><th>Why it enters B</th></tr>
-<tr><td>Conviction</td><td>Moving from uncertainty to near-certainty should increase the need for clarification, non-reinforcement, and assessment.</td></tr>
-<tr><td>Insight / openness to alternative explanations</td><td>Loss of openness to alternatives changes the need for reality-oriented uncertainty and professional evaluation.</td></tr>
+<tr><td>Conviction</td><td>Moving from uncertainty to near-certainty should generally increase the need for clarification, non-reinforcement, and assessment.</td></tr>
+<tr><td>Insight / openness to alternatives</td><td>Loss of openness to alternative explanations changes the need for reality-oriented uncertainty and professional evaluation.</td></tr>
 <tr><td>Immediate behavioral risk</td><td>Moving from no intended action to imminent high-consequence action provides the clearest test of when risk assessment or referral should increase.</td></tr></table>
-<p><b>Why six scenario families?</b> This is deliberately an exploratory feasibility pilot. Each family is crossed with 3 axes × 2 levels, yielding 6 × 3 × 2 = 36 prompts. Six is not a statistically privileged number; it limits clinician burden and lets the team learn whether the manipulation is interpretable before scaling to 15–20 families.</p>
-<p><b>Why three products and three runs per item?</b> Three products form a bounded subset of A so the total remains 36 × 3 × 3 = 324 responses. Three repeated generations estimate stochasticity; they are not three independent clinical replications. Product selection criteria should be specified prospectively, not chosen after A results are seen.</p>
+<p><b>Why six scenario families?</b> This is deliberately a small exploratory pilot rather than a final benchmark. Six families × 3 axes × 2 levels yields 36 prompts. Six is not a statistically privileged number; it keeps clinician burden limited while testing whether the manipulations are stable and interpretable. Successful piloting can justify expansion toward 15–20 families.</p>
+<p><b>Why three products and three runs?</b> B is testing the measurement logic rather than re-covering the entire market. Three products form a bounded subset of A; three runs estimate stochasticity and are not independent clinical replications.</p>
+<div class="note green"><b>Benchmark value of B:</b> it tests whether clinical axes can be manipulated reliably, understood consistently by clinicians, and produce interpretable model differences beyond a simple leaderboard.</div>
 
-<h4>C: Make clinical calibration itself the independent research object</h4>
-<p>C separates from the original student project and extends B into a methods-oriented study. It adds a fourth axis—<b>evidence/plausibility</b>—because this dimension does not always imply a simple monotonic escalation. Depending on context, the appropriate policy may increase, remain unchanged, or decrease, so it belongs in the more controlled benchmark-development track.</p>
+<h4>C: the core PAIR Benchmark development layer</h4>
+<p>C separates from Paper 1 and makes clinical response calibration the primary research object. It adds a fourth axis—<b>evidence/plausibility</b>—because this dimension does not always imply monotonic escalation; the appropriate response may increase, remain unchanged, or decrease depending on context.</p>
 <table><tr><th>C design choice</th><th>Rationale</th></tr>
-<tr><td>8 scenario families</td><td>Replicate each axis across multiple psychosis-relevant phenotypes so an apparent axis effect is not merely one vignette effect, while keeping clinician review feasible.</td></tr>
-<tr><td>4 axes</td><td>Conviction, insight, behavioral risk, and evidence/plausibility capture four relatively distinct aspects of belief strength, revisability, intended action, and external support.</td></tr>
-<tr><td>2 levels per axis</td><td>The pilot tests directional sensitivity only. Precise threshold estimation would require ≥3 ordered levels on key axes.</td></tr>
-<tr><td>3 fixed API configurations</td><td>The immediate goal is to validate the measurement framework under identifiable, reproducible configurations rather than maximize market coverage.</td></tr>
-<tr><td>3 runs per item</td><td>Estimate stochastic response variation; the clinical replication unit remains the scenario family, not each API call.</td></tr></table>
-<p>The current pilot therefore contains 8 × 4 × 2 = 64 prompts and 64 × 3 configurations × 3 runs = 576 responses. A later full design may expand toward 20 families × 4 axes × 2 levels = 160 core prompts plus a separate nuisance-invariance module.</p>
+<tr><td>8 scenario families</td><td>Replicate each axis across multiple psychosis-related phenotypes so an apparent axis effect is not merely one vignette effect, while keeping clinician review feasible.</td></tr>
+<tr><td>4 axes</td><td>Conviction, insight, behavioral risk, and evidence/plausibility map onto belief strength, revisability, intended action, and external support.</td></tr>
+<tr><td>2 levels per axis</td><td>The current pilot tests directional sensitivity only. Precise threshold estimation would require ≥3 ordered levels on key axes.</td></tr>
+<tr><td>3 fixed API configurations</td><td>At benchmark-development stage, models are test loads for the measurement framework rather than the final research target; identifiable, reproducible configurations matter more than broad market coverage.</td></tr>
+<tr><td>3 runs per item</td><td>Estimate stochastic response variation; the clinical replication unit remains the scenario family rather than each API call.</td></tr></table>
+<p>The current C pilot therefore uses 8 × 4 × 2 = 64 prompts and 3 configurations × 3 runs = 576 responses. It is a <b>v0 pilot</b>, not the final benchmark.</p>
 
-<div class="pull">In one sentence: <b>A establishes whether the problem exists; B asks whether the model responds to the clinical variables that should matter; C turns that capability into an independent measurement problem.</b></div>
+<h4>Roadmap from pilot to reusable benchmark</h4>
+<table><tr><th>Stage</th><th>Main objective</th><th>Possible structure</th></tr>
+<tr><td><b>v0 / current</b></td><td>Validate ontology, axes, clinician ground truth, and metrics</td><td>8 families × 4 axes × 2 levels; 3 configs</td></tr>
+<tr><td><b>v0.5</b></td><td>Increase cross-scenario robustness and enable true threshold measurement</td><td>~15–20 families; ≥3 levels on key axes; separate nuisance-invariance module</td></tr>
+<tr><td><b>v1.0</b></td><td>Release a reusable, versioned psychosis-specific benchmark</td><td>Core case bank + clinician annotations + runner/config contract + baselines + challenge sets + version notes</td></tr>
+<tr><td><b>Later versions</b></td><td>Longitudinally compare new models, products, and interventions</td><td>Cultural challenges, consumer-product snapshots, drift tracking, system-prompt/RAG interventions</td></tr></table>
 
-<h4>Which numbers are near-frozen and which are still pragmatic?</h4>
+<h4>The desired output is a clinical-response phenotype, not just a leaderboard</h4>
+<p>The benchmark is most useful when it can say more than “Model A = 92, Model B = 87.” A stronger output would look like:</p>
+<ul>
+<li>Model A: high overall calibration but weak sensitivity to loss of insight;</li>
+<li>Model B: strong behavioral-risk sensitivity but systematic over-escalation;</li>
+<li>Model C: acceptable static responses yet weak adjustment to changes in evidence/plausibility.</li>
+</ul>
+<p>In other words, PAIR should produce <b>behavioral phenotypes and failure signatures</b>, not only rank ordering.</p>
+
+<h4>Which numbers are near-frozen and which are still pragmatic pilot choices?</h4>
 <table><tr><th>Component</th><th>Current status</th><th>Still discussable?</th></tr>
 <tr><td>A: 80 pairs, 16 per SIPS domain</td><td>Largely inherited from the original protocol and close to freeze</td><td>Only limited changes if clinician review identifies invalid items</td></tr>
 <tr><td>A: final consumer-product set</td><td>Planning frame</td><td>Should be frozen prospectively before collection</td></tr>
 <tr><td>B: 3 axes</td><td>Bounded exploratory design</td><td>Best kept small so Paper 1 remains executable</td></tr>
-<tr><td>B: 6 families, 3 products</td><td>Feasibility-driven pilot choices</td><td>Not sacred numbers; can change before collection with explicit workload consequences</td></tr>
-<tr><td>C: 8 families, 4 axes, 3 configurations</td><td>Benchmark-development pilot</td><td>Can be adjusted before empirical freeze; 8 families should not be presented as a final generalization domain</td></tr></table>
+<tr><td>B: 6 families, 3 products</td><td>Feasibility-driven pilot choices</td><td>Not sacred numbers; can change before collection with explicit workload and selection-rule consequences</td></tr>
+<tr><td>C: 8 families, 4 axes, 3 configurations</td><td>Benchmark-development pilot</td><td>Can be adjusted before empirical freeze; 8 families should not be presented as the final generalization domain</td></tr></table>
