@@ -107,6 +107,21 @@ GitHub Pages 是正式会议讲解主界面。v11 起，首页不是“给项目
 - 工程默认 `[L,U]`、synthetic model performance、mock clinician rating 都不得视觉上伪装成真实结果。
 - 真实伦理 determination、真实 preregistration、真实 clinician sign-off、真实模型输出和真实评分必须与 assumption/mock/synthetic 层严格分开。
 
+## 手机端 / 响应式规则（2026-10-05 起冻结）
+GitHub Pages 是会议现场入口，手机端不是附带适配，而是一等展示环境。
+
+必须满足：
+- 竖屏宽度约 360–430px 时正文不横向溢出；
+- 顶部导航可横向滑动或自然换行，不能用固定高度压住正文；
+- 表格允许横向滑动，不能把三列表压到不可读；
+- 图表在手机端自动单列并占满可用宽度；
+- 长链接、代码和英文标识可以断行，不撑破页面；
+- 对话样例在窄屏下由“角色 + 内容”双列改成上下排列；
+- 会议决策 radio/button 触控区域至少约 40–44px；
+- 论文 iframe 在手机竖屏下使用视口相关高度，且仍可单独打开论文全文；
+- 兼容横屏会议展示，并考虑 iOS/Android 安全区域（safe-area inset）；
+- 每次大改 `docs/index*`、`paper_*.html`、临床审题页后，都要检查桌面 + 手机布局。
+
 ## 页面组件
 - 会议主页：`docs/index.html`
 - 论文全文：`docs/papers.html`
