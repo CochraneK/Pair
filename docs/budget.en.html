@@ -1,0 +1,55 @@
+<h3>Timeline and budget: what does it take to move from a prepared design to a submission-ready empirical study?</h3>
+<p>The estimates below use the current A+B+C scope: 960 outputs in A, 324 in B, and 576 in C, for 1,860 total outputs. The dominant cost is not model inference; it is <b>clinician time, manual collection, rating, quality control, and manuscript work</b>. Monetary values are planning assumptions, not institutional pay scales.</p>
+
+<h4>Recommended schedule: 10–12 weeks from final freeze to first submission-ready draft</h4>
+<table>
+<tr><th>Stage</th><th>Suggested timing</th><th>Main work</th><th>Deliverable</th></tr>
+<tr><td>1. Final freeze</td><td>Week 1</td><td>Freeze A/B/C cases, B/C system-selection rules, collection SOP, primary SAP, ethics/preregistration materials</td><td>Executable protocol + SAP + freeze package</td></tr>
+<tr><td>2. Clinician prompt review and calibration</td><td>Weeks 2–3</td><td>A pair validity; B/C manipulation, [L,U], target direction, contraindicated behaviors; rater calibration</td><td>Clinical ground truth and revised frozen case bank</td></tr>
+<tr><td>3. Technical smoke test + empirical collection</td><td>Weeks 3–6</td><td>Run a small real smoke test, then collect A/B consumer-product outputs and C fixed-API outputs with version/error/fallback logging</td><td>1,860 empirical outputs plus raw provenance</td></tr>
+<tr><td>4. Double rating and adjudication</td><td>Weeks 4–8</td><td>Two independent product-blinded raters, agreement checks, predefined adjudication</td><td>Raw ratings + adjudicated dataset</td></tr>
+<tr><td>5. Data lock and analysis</td><td>Weeks 8–10</td><td>QA, missing/anomaly checks, A primary model, B/C family-aware analyses, final figures</td><td>Locked dataset + tables + figures</td></tr>
+<tr><td>6. Manuscript completion</td><td>Weeks 10–12</td><td>Replace placeholders with empirical results; finalize Results, Discussion, limitations, reporting checklist and supplements</td><td>Submission-ready Paper 1 and PAIR-C pilot draft</td></tr>
+</table>
+
+<div class="cols">
+<div class="card"><h4>Fast: 6–8 weeks</h4><p>Requires nearly frozen items, consistently available clinicians, no major product-version interruption, and parallel collection/rating.</p></div>
+<div class="card"><h4>Recommended: 10–12 weeks</h4><p>Leaves realistic room for clinician revision, reliability checks, product drift, and statistical QA.</p></div>
+<div class="card"><h4>Conservative: 14–18 weeks</h4><p>More realistic if clinician availability is fragmented, products change during collection, or cases need a second clinical-review round.</p></div>
+</div>
+
+<h4>Estimated person-hours</h4>
+<table>
+<tr><th>Task</th><th>Estimated effort</th><th>Interpretation</th></tr>
+<tr><td>Clinical case review / ground truth</td><td>~24–30 clinician-hours</td><td>Two clinicians, ~12–15 hours each across A pairs, B/C contrasts, and calibration</td></tr>
+<tr><td>Response rating + adjudication</td><td>~80–110 clinician-hours</td><td>Two raters across A/B/C, including agreement checks and difficult-item review</td></tr>
+<tr><td>Total clinician effort</td><td><b>~105–140 hours</b></td><td>Potentially higher if the ground-truth panel is fully separate from response raters</td></tr>
+<tr><td>Collection / data engineering / QA</td><td>~55–85 hours</td><td>Manual consumer-product collection, screenshots/logs, API execution, cleaning and provenance checks</td></tr>
+<tr><td>Statistics / figures / manuscripts</td><td>~35–60 hours</td><td>Frozen scripts, primary/sensitivity analyses, empirical figures and writing</td></tr>
+<tr><td>Total non-clinical project effort</td><td><b>~100–150 hours</b></td><td>May be absorbed by existing research staff but still represents opportunity cost</td></tr>
+</table>
+
+<h4>Research execution cash budget, excluding publication fees</h4>
+<p class="small">Recommended planning assumptions: clinician time budgeted at RMB 300/hour and research-operations time at RMB 80/hour. Actual compensation depends on institutional rules, collaboration arrangements and authorship roles.</p>
+<table>
+<tr><th>Item</th><th>Low-cash scenario</th><th>Recommended planning budget</th><th>External-specialist / conservative</th></tr>
+<tr><td>Clinician time</td><td>RMB 0–15k</td><td>~RMB 32k–42k</td><td>~RMB 55k–80k</td></tr>
+<tr><td>Research operations / collection / data / statistics</td><td>RMB 0–3k</td><td>~RMB 8k–12k</td><td>~RMB 12k–20k</td></tr>
+<tr><td>Consumer subscriptions/accounts</td><td>RMB 0–500</td><td>RMB 500–1,500</td><td>RMB 1,500–3,000</td></tr>
+<tr><td>API calls and retries</td><td>Usually &lt; RMB 100</td><td>Reserve RMB 100–500</td><td>Reserve RMB 500–1,500</td></tr>
+<tr><td>Storage / backup / miscellaneous</td><td>RMB 0–500</td><td>RMB 500–1,500</td><td>RMB 1,000–3,000</td></tr>
+<tr><td><b>Total research execution</b></td><td><b>~RMB 1k–20k</b></td><td><b>~RMB 40k–55k</b></td><td><b>~RMB 70k–105k</b></td></tr>
+</table>
+<div class="note blue"><b>Key point:</b> if clinicians and research staff contribute as part of the existing collaboration, direct cash expenditure may be only a few thousand RMB, while the project still consumes roughly 200–290 person-hours. If clinicians are compensated as external specialists, clinical labor becomes the dominant cost.</div>
+
+<h4>Publication costs should be budgeted separately</h4>
+<table>
+<tr><th>Target journal</th><th>Current official APC/APF</th><th>Notes</th></tr>
+<tr><td>npj Digital Medicine</td><td><b>Original Research: US$4,290 / £3,090 / €3,390</b></td><td>Charge is determined at acceptance; institutional OA agreements and discretionary support may apply. <a href="https://www.nature.com/npjdigitalmed/open-access" target="_blank">Official page</a></td></tr>
+<tr><td>JMIR Mental Health</td><td><b>US$3,150</b></td><td>Payable upon acceptance; institutional support/waiver policies may apply. <a href="https://mental.jmir.org/about-journal/article-processing-fees" target="_blank">Official page</a></td></tr>
+</table>
+<p>If the institution does not cover the APC, the publication fee can exceed the combined cost of API use, subscriptions and hosting. Institutional open-access agreements or publication-fund reimbursement should therefore be checked before submission.</p>
+
+<h4>If the C pilot succeeds: extension to PAIR Benchmark v1</h4>
+<p>The current C design is a benchmark-development pilot. Expanding toward ~20 scenario families, additional ordered levels, a nuisance-invariance module and a formal release package would reasonably require another <b>12–24 weeks</b>. If double clinical review and response rating are retained, an additional <b>~RMB 30k–80k</b> execution budget is a useful planning range; the exact number should be recalculated after the pilot determines which axes, levels and system strata remain.</p>
+<div class="note amber"><b>Management recommendation:</b> keep “Paper 1 submission-ready” as the 10–12 week milestone. PAIR-C can run in parallel, but a full benchmark v1 should not become a prerequisite for submitting the first paper.</div>
