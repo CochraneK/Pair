@@ -1,6 +1,38 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>PAIR｜研究讨论手册</title><style>
 :root{--paper:#f4f0e8;--ink:#1f1d1a;--rule:#d7cec0;--soft:#ece5d8}
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;height:100dvh;background:var(--paper);color:var(--ink);overflow:hidden}body{display:flex;flex-direction:column}.bar{flex:0 0 auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px max(12px,env(safe-area-inset-right)) 8px max(12px,env(safe-area-inset-left));border-bottom:1px solid var(--rule);background:var(--paper);font:600 12px/1.2 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}.bar button,.bar a{min-height:40px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--rule);background:transparent;color:var(--ink);padding:8px 10px;text-decoration:none;cursor:pointer;white-space:nowrap}.bar button.active,.bar button:hover,.bar a:hover{background:var(--soft)}iframe{display:block;flex:1 1 auto;min-height:0;width:100%;border:0;background:var(--paper)}
-@media(max-width:640px){.bar{gap:6px;padding-top:max(7px,env(safe-area-inset-top));overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none}.bar::-webkit-scrollbar{display:none}.bar button,.bar a{min-height:42px;padding:8px 10px;font-size:12px;flex:0 0 auto}.bar a:nth-of-type(3){display:none}}
-@media(max-width:380px){.bar button,.bar a{padding:8px 9px;font-size:11px}}
-</style></head><body><div class="bar"><button id="zh" onclick="setLang('zh')" class="active">中文</button><button id="en" onclick="setLang('en')">English</button><a href="papers.html">论文全文 / Papers</a><a href="PAIR_C_CLINICIAN_REVIEW.html">临床审题</a><a href="dashboard.html">技术资料</a><button onclick="document.getElementById('frame').contentWindow.print()">打印 / PDF</button></div><iframe id="frame" src="index.zh.html" title="PAIR meeting handbook"></iframe><script>function setLang(l){document.getElementById('frame').src=l==='zh'?'index.zh.html':'index.en.html';document.getElementById('zh').classList.toggle('active',l==='zh');document.getElementById('en').classList.toggle('active',l==='en');localStorage.setItem('pair-page-lang',l)}setLang(localStorage.getItem('pair-page-lang')||'zh');</script></body></html>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;height:100dvh;background:var(--paper);color:var(--ink);overflow:hidden}body{display:flex;flex-direction:column}.bar{flex:0 0 auto;display:flex;align-items:center;gap:8px;padding:8px max(12px,env(safe-area-inset-right)) 8px max(12px,env(safe-area-inset-left));border-bottom:1px solid var(--rule);background:var(--paper);font:600 12px/1.2 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}.bar button,.bar a{min-height:40px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--rule);background:transparent;color:var(--ink);padding:8px 11px;text-decoration:none;cursor:pointer;white-space:nowrap}.bar button:hover,.bar a:hover{background:var(--soft)}.spacer{flex:1}iframe{display:block;flex:1 1 auto;min-height:0;width:100%;border:0;background:var(--paper)}
+@media(max-width:640px){.bar{gap:6px;padding-top:max(7px,env(safe-area-inset-top));overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}.bar::-webkit-scrollbar{display:none}.bar button,.bar a{min-height:42px;padding:8px 10px;flex:0 0 auto}.spacer{display:none}}
+</style></head><body>
+<div class="bar"><button id="lang" onclick="toggleLang()">English</button><a id="papers" href="papers.html">论文</a><a id="review" href="PAIR_C_CLINICIAN_REVIEW.html">临床审题</a><span class="spacer"></span><button id="print" onclick="document.getElementById('frame').contentWindow.print()">打印</button></div>
+<iframe id="frame" src="index.zh.html" title="PAIR meeting handbook"></iframe>
+<script>
+let lang=localStorage.getItem('pair-page-lang')||'zh';
+const frame=document.getElementById('frame');
+function applyLabels(){
+ document.getElementById('lang').textContent=lang==='zh'?'English':'中文';
+ document.getElementById('papers').textContent=lang==='zh'?'论文':'Papers';
+ document.getElementById('review').textContent=lang==='zh'?'临床审题':'Clinical review';
+ document.getElementById('print').textContent=lang==='zh'?'打印':'Print';
+ document.documentElement.lang=lang==='zh'?'zh-CN':'en';
+}
+async function injectLiterature(){
+ try{
+   const r=await fetch(lang==='zh'?'literature.zh.html':'literature.en.html',{cache:'no-store'});
+   if(!r.ok)return;
+   const fragment=await r.text();
+   const doc=frame.contentDocument;
+   const sec=doc&&doc.getElementById(lang==='zh'?'zh5':'en5');
+   const box=sec&&sec.querySelector('.content');
+   if(box)box.innerHTML=fragment;
+ }catch(e){}
+}
+function applyLang(){
+ applyLabels();
+ localStorage.setItem('pair-page-lang',lang);
+ const wanted=lang==='zh'?'index.zh.html':'index.en.html';
+ if(!frame.src.endsWith(wanted)) frame.src=wanted; else injectLiterature();
+}
+function toggleLang(){lang=lang==='zh'?'en':'zh';applyLang()}
+frame.addEventListener('load',injectLiterature);
+applyLang();
+</script></body></html>
