@@ -1,0 +1,60 @@
+<h3>原 protocol 的主要参考论文很重要，但 2026 年的文献版图已经比它发表时更拥挤。</h3>
+
+<h4>主要参考：Shen 等，JAMA Psychiatry，2026</h4>
+<p>Shen 等直接比较了 ChatGPT 面对精神病性提示词与普通匹配提示词时的回应恰当性。研究构建了 79 条精神病性提示词及 79 条相应对照，覆盖 SIPS 的五个阳性症状维度；三种 ChatGPT 产品版本分别对每条提示回答一次，由临床评分者按 0–2 级评价总体恰当性，并使用比例优势回归比较精神病性与对照条件。这为原始 protocol 提供了非常清楚的研究骨架。<sup><a href="https://doi.org/10.1001/jamapsychiatry.2026.0249" target="_blank">[1]</a></sup></p>
+
+<div class="cols">
+  <div class="card"><h4>为什么值得参考</h4><ul>
+    <li>不是单纯比较模型排行榜，而是有精神病性提示词与对应普通对照。</li>
+    <li>使用临床人员评价回应是否恰当，而不是只依赖自动评分。</li>
+    <li>保留 0–2 级有序结局，可以估计精神病性内容增加不恰当回应的程度。</li>
+    <li>病例按 SIPS P1–P5 组织，使题库具有临床结构。</li>
+  </ul></div>
+  <div class="card"><h4>论文作者自己指出的局限</h4><ul>
+    <li>只测试 ChatGPT，一个产品家族，外推到其他消费产品有限。</li>
+    <li>恰当性评分虽标准化，但仍不可避免带有临床主观判断。</li>
+    <li>识别、非强化、紧迫性、资源建议等组成维度没有作为主要结果分别分析。</li>
+    <li>每条提示在每个版本只运行一次，无法充分描述生成随机性。</li>
+    <li>只做单轮问答，没有评价多轮上下文累积后可能出现的安全退化。</li>
+    <li>产品版本变化非常快，同行评审论文很难代表“当前版本”的长期状态。</li>
+  </ul></div>
+</div>
+
+<h4>PAIR 在这个基础上进一步修什么？</h4>
+<p>目标不是把 Shen 论文简单复制到“中国模型”。除上述作者已承认的局限外，PAIR 还进一步关注 <b>每一对提示词是否真正构成最小对照</b>。Shen 论文说明对照在长度和语言上与精神病性提示相似，但其公开主文并没有把行为风险、金额、行动计划、证据强度等逐对作为独立混杂维度进行系统报告。PAIR 因此增加逐对混杂审查，尽量避免“精神病性内容”和“风险程度”同时变化。</p>
+<table>
+  <tr><th>Shen 2026</th><th>PAIR 的对应增强</th></tr>
+  <tr><td>3 个 ChatGPT 产品版本</td><td>A 扩展到多个中文消费级产品，并明确结果属于“产品快照”，不等同于底层模型固有属性</td></tr>
+  <tr><td>每条提示每版本 1 次</td><td>A 加入分层重复子集；B/C 每题重复生成，用于描述随机性</td></tr>
+  <tr><td>总体 0–2 恰当性为核心</td><td>保留总体评分，同时保存组成性失败、原始评分者数据和裁决前分歧</td></tr>
+  <tr><td>精神病性 vs 普通对照</td><td>A 做最小配对与混杂审查；B/C 再引入“只改变一个临床变量”的最小临床对照</td></tr>
+  <tr><td>单轮横断面</td><td>本轮 A 仍保持单轮以保证可执行和可比；多轮风险已有更强工作覆盖，因此不作为当前主创新</td></tr>
+</table>
+
+<h4>2025–2026 年已经有人做到哪里？</h4>
+<p>这些工作意味着，我们不能再把“精神健康 benchmark”“多轮对话”“APP vs API”“response policy”“临床校准”中的任何一个单点包装成世界首次。真正需要保留的是它们的<b>组合方式和精神病性场景下的具体测量问题</b>。</p>
+<table>
+  <tr><th>代表工作</th><th>已经做到的内容</th><th>对 PAIR 的影响</th></tr>
+  <tr><td><b>PsychiatryBench</b><br>npj Digital Medicine, 2026 <sup><a href="https://doi.org/10.1038/s41746-026-02582-w" target="_blank">[2]</a></sup></td><td>基于权威精神科教材/病例，覆盖诊断、治疗、管理、随访等 11 类任务，约 5,000 余条专家标注项目。</td><td>说明“大规模精神科 benchmark”本身已经不是空白；PAIR 应聚焦消费产品安全和精神病性回应校准。</td></tr>
+  <tr><td><b>SIM-VAIL</b><br>Nature Medicine, 2026 <sup><a href="https://doi.org/10.1038/s41591-026-04577-2" target="_blank">[3]</a></sup></td><td>30 种模拟用户画像、9 个聊天机器人、810 段多轮对话，逐轮评价 13 个精神健康风险维度，直接研究风险如何随对话累积。</td><td>说明“多轮精神健康安全审计”已有很强工作；PAIR 不把多轮本身当创新，而突出严格可控的精神病性最小对照。</td></tr>
+  <tr><td><b>LLM Spirals of Delusion</b><br>arXiv, 2026 <sup><a href="https://arxiv.org/abs/2604.06188" target="_blank">[4]</a></sup></td><td>比较 API 与真实聊天界面，在 20 轮对话中评价谄媚、升级和妄想强化，并显示同一 API 随时间也会发生明显行为漂移。</td><td>直接证明“API ≠ 消费界面”和“版本漂移”已经被提出；PAIR 的价值是把这些原则落实到严格采集 SOP，而不是声称首次发现。</td></tr>
+  <tr><td><b>When Chatbots Accommodate</b><br>arXiv, 2026 <sup><a href="https://arxiv.org/abs/2606.04431" target="_blank">[5]</a></sup></td><td>利用约 4.7–4.8 万轮真实脆弱对话，推断 GPT-4.1、Character.AI、Replika 在不同脆弱状态下采取的回应策略。</td><td>说明“回应策略”作为概念并不新。PAIR-C 必须把创新落在精神病性场景、单一临床变量最小改变、医生区间和双向校准误差的组合上。</td></tr>
+  <tr><td><b>ClinDet-Bench</b><br>ACL Industry, 2026 <sup><a href="https://doi.org/10.18653/v1/2026.acl-industry.47" target="_blank">[6]</a></sup></td><td>系统研究临床信息不完整时，模型能否判断“当前是否足以做出决策”，把不确定性/可判定性作为独立能力评价。</td><td>提醒我们：好的临床回应不只是“答得更强”，还包括在证据不足时保持不确定性。</td></tr>
+  <tr><td><b>K-Bench</b><br>arXiv, 2026-09 <sup><a href="https://arxiv.org/abs/2609.15855" target="_blank">[7]</a></sup></td><td>200 个多轮高风险精神健康情境，覆盖 125 个模型配置、33 个基础模型、14 家提供商，并采用临床校准和受保护 benchmark。</td><td>进一步压缩“clinician-calibrated mental-health benchmark”的宽泛 novelty。PAIR-C 应明确自己是精神病性最小临床对照，而不是泛精神健康高风险 benchmark。</td></tr>
+</table>
+
+<h4>因此，PAIR 现在还能合理主张什么？</h4>
+<div class="note green">
+  <p><b>第一篇 A+B：</b>价值主要来自严格匹配的精神病性/普通对照、多个中国消费产品的可复现快照、原始评分者信息与随机稳定性；B 作为探索性部分增加对关键临床变量变化的敏感性分析。</p>
+  <p><b>第二篇 PAIR-C：</b>更窄但更明确的创新候选是：<b>精神病性场景 + 单一临床变量逐一最小改变 + 医生定义的可接受回应区间 + 医生直接标注目标变化方向 + 回应不足与过度回应对称测量</b>。在当前定向检索中，尚未找到完全相同的组合，但不使用“世界首次”表述。</p>
+</div>
+
+<details><summary>参考文献（会议版）</summary><ol>
+<li>Shen E, Hamati F, Donohue MR, et al. <i>Evaluation of Large Language Model Chatbot Responses to Psychotic Prompts.</i> JAMA Psychiatry. 2026;83(6):655–657. doi:10.1001/jamapsychiatry.2026.0249.</li>
+<li>Fouda AE, Hassan AA, Hanafy RJ, et al. <i>PsychiatryBench: a multi-task benchmark for LLMs in psychiatry.</i> npj Digital Medicine. 2026;9:320. doi:10.1038/s41746-026-02582-w.</li>
+<li>Weilnhammer V, Hou KYC, Luettgau L, et al. <i>A clinically validated framework for auditing AI chatbot behavior in mental health interactions.</i> Nature Medicine. 2026. doi:10.1038/s41591-026-04577-2.</li>
+<li>Kirgis P, Hawriluk B, Feng S, et al. <i>LLM Spirals of Delusion: A Benchmarking Audit Study of AI Chatbot Interfaces.</i> arXiv:2604.06188. 2026.</li>
+<li>Chu MD, Wu Y, Chen Z, Hwang AHC, Luceri L. <i>When Chatbots Accommodate: Auditing the Response Policies of AI Companions in Vulnerable Conversations.</i> arXiv:2606.04431. 2026.</li>
+<li>Watanabe Y, Kobashi Y, Kojima T, et al. <i>ClinDet-Bench: Beyond Abstention, Evaluating Judgment Determinability of LLMs in Clinical Decision-Making.</i> ACL Industry Track. 2026:681–703. doi:10.18653/v1/2026.acl-industry.47.</li>
+<li>Vowels LM, Vowels MJ, Sharma S, et al. <i>K-Bench: a clinically calibrated benchmark for evaluating large language models in high-risk mental health conversations.</i> arXiv:2609.15855. 2026.</li>
+</ol><p class="small">文献状态核对：2026-10-05。预印本与正式同行评审论文在最终投稿时应再次查新并更新版本信息。</p></details>
